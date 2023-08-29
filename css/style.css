@@ -19,18 +19,43 @@ body{
 
 .card{
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 350px;
     background: gray;
-    opacity: 0.4;
+    opacity: 0.9;
 }
 
 .four-cards{
-    width: 200px;
-    height: 200px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.big-card:nth-child(n){
-    transform: scale(2);
+.big-card{
+    transition: 1s all cubic-bezier(.32,.61,.15,1);
+}
+
+.four-cards:hover > .big-card:nth-child(2){
+    transform: translate(-70%, 35px) rotate(-10deg);
+}
+.four-cards:hover > .big-card:nth-child(4){
+    transform: translate(-35%, 8px) rotate(4deg);
+}
+.four-cards:hover > .big-card:nth-child(6){
+    transform: translate(10%) rotate(-5deg);
+}
+.four-cards:hover > .big-card:nth-child(8){
+    transform: translate(50%, 40px) rotate(17deg);
+}
+.big-card:nth-child(2){background: white;}
+.big-card:nth-child(4){background: red;}
+.big-card:nth-child(6){background: blue;}
+.big-card:nth-child(8){background: green;}
+
+
+.small-card{
+    width: 40%;
+    width: 40%;
+    opacity: 0;
 }
