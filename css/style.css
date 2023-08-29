@@ -103,14 +103,28 @@ button{
     transform: rotate(180deg);
 }
 
-.four-cards[data-status="after"]{
-    transform: translate(-500px);
+.four-cards[data-status="pre-before"]{
+    transform: translate(500px);
     opacity: 0;
     scale: 0;
+    transition: none;
 }
 
 .four-cards[data-status="before"]{
     transform: translate(500px);
+    opacity: 0;
+    scale: 0;
+}
+
+.four-cards[data-status="pre-after"]{
+    transform: translate(-500px);
+    opacity: 0;
+    scale: 0;
+    transition: none;
+}
+
+.four-cards[data-status="after"]{
+    transform: translate(-500px);
     opacity: 0;
     scale: 0;
 }

@@ -22,30 +22,36 @@ fourCards.forEach(card => {
 
 buttonN.addEventListener('click', () => { 
     fourCards[i].dataset.status = "after";
-    // i= i+1 <= fourCards.length-1 ? i+1 : 0;
-    if(i+1 <= fourCards.length-1){
-        i++;
-    }
-    else{
-        i = 0;
-        fourCards.forEach(card => {
-            card.dataset.status = "before";
-        });
-    }
-    fourCards[i].dataset.status = "active";
+    i= i+1 <= fourCards.length-1 ? i+1 : 0;
+    // if(i+1 <= fourCards.length-1){
+    //     i++;
+    // }
+    // else{
+    //     i = 0;
+    //     fourCards.forEach(card => {
+    //         card.dataset.status = "before";
+    //     });
+    // }
+    fourCards[i].dataset.status = "pre-before";
+    setTimeout(() => {
+        fourCards[i].dataset.status = "active";
+    });
 });
 
 buttonB.addEventListener('click', () => {
     fourCards[i].dataset.status = "before";
-    // i= i-1 >= 0 ? i-1 : fourCards.length-1;
-    if(i-1 >= 0){
-        i--;
-    }
-    else{
-        i = fourCards.length-1;
-        fourCards.forEach(card => {
-            card.dataset.status = "after";
-        });
-    }
-    fourCards[i].dataset.status = "active";
+    i= i-1 >= 0 ? i-1 : fourCards.length-1;
+    // if(i-1 >= 0){
+    //     i--;
+    // }
+    // else{
+    //     i = fourCards.length-1;
+    //     fourCards.forEach(card => {
+    //         card.dataset.status = "after";
+    //     });
+    // }
+    fourCards[i].dataset.status = "pre-after";
+    setTimeout(() => {
+        fourCards[i].dataset.status = "active";
+    });
 });
