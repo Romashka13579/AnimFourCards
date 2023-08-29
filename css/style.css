@@ -104,13 +104,13 @@ button{
 }
 
 .four-cards[data-status="after"]{
-    transform: translate(300px);
+    transform: translate(-500px);
     opacity: 0;
     scale: 0;
 }
 
 .four-cards[data-status="before"]{
-    transform: translate(-300px);
+    transform: translate(500px);
     opacity: 0;
     scale: 0;
 }

@@ -10,8 +10,14 @@ fourCards.forEach(card => {
     }
 });
 
-buttonB.addEventListener('click', () => {
+buttonN.addEventListener('click', () => {
     fourCards[i].dataset.status = "after";
     i++;
+    fourCards[i].dataset.status = "active";
+});
+
+buttonB.addEventListener('click', () => {
+    fourCards[i].dataset.status = "before";
+    i--;
     fourCards[i].dataset.status = "active";
 });
