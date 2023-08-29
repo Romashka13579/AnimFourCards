@@ -15,6 +15,7 @@ body{
     width: 100vw;
     height: 100vh;
     background: black;
+    flex-direction: column;
 }
 
 .four-cards{
@@ -22,6 +23,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1.2s ease;
 }
 
 .card{
@@ -35,6 +37,12 @@ body{
 .big-card{
     width: 250px;
     height: 350px;
+}
+
+.small-card{
+    width: 100px;
+    height: 140px;
+    transition: 0.8s all cubic-bezier(.32,.61,.15,1);
 }
 
 .four-cards:hover > .card:nth-child(1){
@@ -54,13 +62,6 @@ body{
 .card:nth-child(5){background: blue;}
 .card:nth-child(8){background: green;}
 
-
-.small-card{
-    width: 100px;
-    height: 140px;
-    transition: 0.8s all cubic-bezier(.32,.61,.15,1);
-}
-
 .four-cards:hover > .card:nth-child(2){
     transform: translate(-300%, -85%) rotate(15deg);
 }
@@ -78,3 +79,52 @@ body{
 .card:nth-child(4){background: pink;}
 .card:nth-child(6){background: purple;}
 .card:nth-child(7){background: yellow;}
+
+.buttons{
+    position: absolute;
+    margin-top: 460px;
+    display: flex;
+    gap: 16px;
+}
+
+button{
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px 2px;
+    transition: all 0.5s ease;
+}
+
+.button:nth-child(1){
+    transform: rotate(180deg);
+}
+
+.four-cards[data-status="after"]{
+    transform: translate(300px);
+    opacity: 0;
+    scale: 0;
+}
+
+.four-cards[data-status="before"]{
+    transform: translate(-300px);
+    opacity: 0;
+    scale: 0;
+}
+
+.four-cards[data-status="active"]{
+    transform: translate(0px);
+    opacity: 1;
+    scale: 1;
+}
+
+button:hover{
+    color: brown;
+}
+
+button:focus{
+    color: rgb(58, 16, 16);
+}

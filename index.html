@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards with hovering bachground</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
     <div class="the-animations">
         <div class="four-cards-block">
-            <div class="four-cards">
+            <div class="four-cards" data-status = "after" data-index = "0">
                 <div class="big-card card"></div>
                 <div class="small-card card"></div>
                 <div class="big-card card"></div>
@@ -21,6 +22,34 @@
                 <div class="small-card card"></div>
                 <div class="small-card card"></div>
                 <div class="big-card card"></div>
+            </div>
+            <div class="four-cards" data-status = "active" data-index = "1">
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+            </div>
+            <div class="four-cards" data-status = "before" data-index = "2">
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+                <div class="small-card card"></div>
+                <div class="small-card card"></div>
+                <div class="big-card card"></div>
+            </div>
+            <div class="buttons">
+                <div class="button">
+                    <button class="next fa-solid fa-arrow-right"></button>
+                </div>
+                <div class="button">
+                    <button class="back fa-solid fa-arrow-right"></button>
+                </div>
             </div>
         </div>
     </div>
