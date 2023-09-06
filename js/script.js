@@ -33,14 +33,16 @@ buttonB.addEventListener('click', () => {
 var textLetterChanging = document.querySelector('.text-letter-changing');
 var arrayOfLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-textLetterChanging.addEventListener('mouseenter', () => {
-    let  letters = (textLetterChanging.textContent).split("");
-    console.log(letters);
+textLetterChanging.addEventListener('click', () => {
+    var  letters = (textLetterChanging.textContent).split("");
     setInterval(() => {
+        var resulttext = "";
         letters.forEach(letter => {
-            var i = Math.round(Math.random() * 25) + 1;
-            letter = arrayOfLetters[i];
-            textLetterChanging.textContent = letter;
+            var i = Math.round(Math.random() * 25);
+            if(letter == " "){resulttext += " "; return;}
+            resulttext += arrayOfLetters[i];
+            console.log(letter);
         });
-    }, 1000);
+        textLetterChanging.textContent = resulttext;
+    }, 2000);
 });
