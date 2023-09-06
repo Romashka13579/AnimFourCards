@@ -31,18 +31,24 @@ buttonB.addEventListener('click', () => {
 
 
 var textLetterChanging = document.querySelector('.text-letter-changing');
-var arrayOfLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var ExistingLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 textLetterChanging.addEventListener('click', () => {
-    var  letters = (textLetterChanging.textContent).split("");
+
+    var lettersOfText = (textLetterChanging.textContent).split("");
+    var resulttext = "";
+    var itterations = 0;
+    var index = 0;
+
     setInterval(() => {
-        var resulttext = "";
-        letters.forEach(letter => {
-            var i = Math.round(Math.random() * 25);
+        lettersOfText.forEach(letter => {
+            if(index < itterations){resulttext += letter; index++; return;}
             if(letter == " "){resulttext += " "; return;}
-            resulttext += arrayOfLetters[i];
-            console.log(letter);
+            resulttext += ExistingLetters[Math.round(Math.random() * (ExistingLetters.length-1))];
         });
         textLetterChanging.textContent = resulttext;
-    }, 2000);
+        resulttext ="";
+        itterations += 1;
+        index = 0;
+    }, 100);
 });
