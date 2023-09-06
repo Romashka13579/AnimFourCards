@@ -1,20 +1,35 @@
+:root{
+    --background:black;
+    --big-card-1:white;
+    --big-card-2:red;
+    --big-card-3:blue;
+    --big-card-4:green;
+    --small-card-1:orange;
+    --small-card-2:pink;
+    --small-card-3:purple;
+    --small-card-4:yellow;
+    --button:brown;
+    --button-focused:rgb(58, 16, 16);
+    --text:white;
+}
+
 body{
     margin: 0px;
     padding: 0px;
 }
 
 .the-animations{
-    display: flex;
-    background: black;
+    width: 100%;
+    background: var(--background);
 }
 
 .four-cards-block{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background: black;
+    background: var(--background);
     flex-direction: column;
 }
 
@@ -28,7 +43,6 @@ body{
 
 .card{
     position: absolute;
-    background: gray;
     border-radius: 25px;
     transition: 1s all cubic-bezier(.32,.61,.15,1);
     /* opacity: 0.9; */
@@ -57,10 +71,10 @@ body{
 .four-cards:hover > .card:nth-child(8){
     transform: translate(50%, 40px) rotate(17deg);
 }
-.card:nth-child(1){background: white;}
-.card:nth-child(3){background: red;}
-.card:nth-child(5){background: blue;}
-.card:nth-child(8){background: green;}
+.card:nth-child(1){background: var(--big-card-1);}
+.card:nth-child(3){background: var(--big-card-2);}
+.card:nth-child(5){background: var(--big-card-3);}
+.card:nth-child(8){background: var(--big-card-4);}
 
 .four-cards:hover > .card:nth-child(2){
     transform: translate(-300%, -85%) rotate(15deg);
@@ -75,10 +89,10 @@ body{
     transform: translate(240%, 120%) rotate(35deg);
 }
 
-.card:nth-child(2){background: orange;}
-.card:nth-child(4){background: pink;}
-.card:nth-child(6){background: purple;}
-.card:nth-child(7){background: yellow;}
+.card:nth-child(2){background: var(--small-card-1);}
+.card:nth-child(4){background: var(--small-card-2);}
+.card:nth-child(6){background: var(--small-card-3);}
+.card:nth-child(7){background: var(--small-card-4);}
 
 .buttons{
     position: absolute;
@@ -136,9 +150,26 @@ button{
 }
 
 button:hover{
-    color: brown;
+    color: var(--button);
 }
 
 button:focus{
-    color: rgb(58, 16, 16);
+    color: var(--button-focused);
+}
+
+.texts-kyber-animations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+}
+
+.text-letter-changing{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    font-weight: 600;
 }
