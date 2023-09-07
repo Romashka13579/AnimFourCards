@@ -36,7 +36,7 @@ var interval = null;
 
 textLetterChangings.forEach(textLetterChanging => {
     textLetterChanging.addEventListener('mouseover', () => {
-        var lettersOfText = (textLetterChanging.textContent).split("");
+        var lettersOfText = textLetterChanging.dataset.text.split("");
         var resulttext = "";
         var itterations = -1;
         var index = 0;
