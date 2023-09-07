@@ -11,9 +11,9 @@ fourCards.forEach(card => {
     }
 });
 
-buttonN.addEventListener('click', () => { 
+buttonN.addEventListener('click', () => {
     fourCards[i].dataset.status = "after";
-    i= i+1 <= fourCards.length-1 ? i+1 : 0;
+    i = i + 1 <= fourCards.length - 1 ? i + 1 : 0;
     fourCards[i].dataset.status = "pre-before";
     setTimeout(() => {
         fourCards[i].dataset.status = "active";
@@ -22,7 +22,7 @@ buttonN.addEventListener('click', () => {
 
 buttonB.addEventListener('click', () => {
     fourCards[i].dataset.status = "before";
-    i= i-1 >= 0 ? i-1 : fourCards.length-1;
+    i = i - 1 >= 0 ? i - 1 : fourCards.length - 1;
     fourCards[i].dataset.status = "pre-after";
     setTimeout(() => {
         fourCards[i].dataset.status = "active";
@@ -44,16 +44,16 @@ textLetterChangings.forEach(textLetterChanging => {
         var itterations = -1;
         var index = 0;
         clearInterval(interval);
-    
+
         interval = setInterval(() => {
             lettersOfText.forEach(letter => {
-                if(index < itterations){resulttext += letter; index++; return;}
-                if(letter == " "){resulttext += " "; return;}
-                resulttext += ExistingLetters[Math.round(Math.random() * (ExistingLetters.length-1))];
+                if (index < itterations) { resulttext += letter; index++; return; }
+                if (letter == " ") { resulttext += " "; return; }
+                resulttext += ExistingLetters[Math.round(Math.random() * (ExistingLetters.length - 1))];
             });
             textLetterChanging.textContent = resulttext;
-            resulttext ="";
-            itterations += 1/2;
+            resulttext = "";
+            itterations += 1 / 2;
             index = 0;
         }, 30);
     });
@@ -69,20 +69,25 @@ var startPosition = 0;
 var position = 0;
 
 window.addEventListener('mousemove', (event) => {
-    if(pressed == true){
-        distance = event.clientX - startPosition;
-        position = distance + parseInt(specialSliderFull.dataset.position);
-        specialSliderFull.style.transform = `translateX(${position}px)`;
-        console.log(distance, specialSliderFull.dataset.position);
-    }
+    if (pressed == false) { return; }
+    event.preventDefault();
+    distance = (event.clientX - startPosition) / window.innerWidth * 100;
+    position = (distance + parseFloat(specialSliderFull.dataset.position));
+    specialSliderFull.style.transform = `translateX(${position}%)`;
+
+    // var specialSliderCards = document.querySelectorAll('.special-slider-card');
+    // specialSliderCards.forEach(specialSliderCard => {
+    //     specialSliderCard.animate
+    // });
+
 });
 
-window.addEventListener('mousedown', (event) => {
+specialSliderFull.addEventListener('mousedown', (event) => {
     pressed = true;
     startPosition = event.clientX;
 });
 
 window.addEventListener('mouseup', () => {
-    pressed = false; 
+    pressed = false;
     specialSliderFull.dataset.position = position;
 });
