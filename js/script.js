@@ -30,6 +30,9 @@ buttonB.addEventListener('click', () => {
 });
 
 
+
+
+
 var textLetterChangings = document.querySelectorAll('.text-letter-changing');
 var ExistingLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var interval = null;
@@ -54,4 +57,32 @@ textLetterChangings.forEach(textLetterChanging => {
             index = 0;
         }, 30);
     });
+});
+
+
+
+
+
+var specialSliderFull = document.querySelector('.special-slider-full');
+var pressed = false;
+var startPosition = 0;
+var position = 0;
+
+window.addEventListener('mousemove', (event) => {
+    if(pressed == true){
+        distance = event.clientX - startPosition;
+        position = distance + parseInt(specialSliderFull.dataset.position);
+        specialSliderFull.style.transform = `translateX(${position}px)`;
+        console.log(distance, specialSliderFull.dataset.position);
+    }
+});
+
+window.addEventListener('mousedown', (event) => {
+    pressed = true;
+    startPosition = event.clientX;
+});
+
+window.addEventListener('mouseup', () => {
+    pressed = false; 
+    specialSliderFull.dataset.position = position;
 });

@@ -210,7 +210,6 @@ button:focus{
     flex-direction: row;
     gap: 50px;
     width: fit-content;
-    transform: translateX(-50px);
 }
 
 .special-slider-card{
