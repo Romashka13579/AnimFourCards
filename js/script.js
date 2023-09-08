@@ -76,7 +76,7 @@ window.addEventListener('mousemove', (event) => {
     specialSliderFull.style.transform = `translateX(${position}%)`;
 
     var specialSliderCards = document.querySelectorAll('.special-slider-card');
-    var change = Math.abs(position);
+    var change = -position;
     var center = (window.innerWidth/2)/specialSliderFull.offsetWidth*100 + change;
     console.log(center);
     specialSliderCards.forEach(specialSliderCard => {
