@@ -78,13 +78,16 @@ window.addEventListener('mousemove', (event) => {
     var specialSliderCards = document.querySelectorAll('.special-slider-card');
     var change = -position;
     var center = (window.innerWidth/2)/specialSliderFull.offsetWidth*100 + change;
-    console.log(center);
     specialSliderCards.forEach(specialSliderCard => {
         var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth/2) / specialSliderFull.offsetWidth * 100;
-        // console.log(cardPosition);
+
         specialSliderCard.animate({
             transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
-        }, {duration: 1000, fill:"forwards"})
+        }, {duration: 1000, fill:"forwards"});
+
+        // specialSliderCard.animate({
+        //     transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
+        // }, {duration: 1000, fill:"forwards"});
     });
 
 });
@@ -97,4 +100,20 @@ specialSliderFull.addEventListener('mousedown', (event) => {
 window.addEventListener('mouseup', () => {
     pressed = false;
     specialSliderFull.dataset.position = position;
+});
+
+
+
+
+var rangeInputs = document.querySelectorAll('.perspective-slider-input');
+var perspectiveCard = document.querySelector('.perspective-card');
+
+console.log(document.querySelector('[data-inputType="perspective"]').dataset.inputType);
+
+rangeInputs.forEach(rangeInput => {
+    rangeInput.addEventListener('input', () => {
+        var value = rangeInput.value;
+        console.log(rangeInput.dataset.inputType);
+        perspectiveCard.style.transform = `${rangeInput.dataset.inputType}(${value}%)`;
+    });
 });
