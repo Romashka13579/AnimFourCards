@@ -210,11 +210,12 @@ button:focus{
     flex-direction: row;
     gap: 50px;
     width: fit-content;
-    /* transform: translateX(40%); */
+
 }
 
 .special-slider-card{
     width: 500px;
     height: 420px;
     background: rgb(203, 203, 203);
+    transform: perspective(1000px) rotateY(20deg) rotateX(10deg);
 }
