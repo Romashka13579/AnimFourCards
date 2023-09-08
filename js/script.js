@@ -76,13 +76,14 @@ window.addEventListener('mousemove', (event) => {
     specialSliderFull.style.transform = `translateX(${position}%)`;
 
     var specialSliderCards = document.querySelectorAll('.special-slider-card');
-    var position2 = position - (window.innerWidth)/specialSliderFull.offsetWidth*100;
-    console.log(position2);
+    var change = Math.abs(position);
+    var center = (window.innerWidth/2)/specialSliderFull.offsetWidth*100 + change;
+    console.log(center);
     specialSliderCards.forEach(specialSliderCard => {
         var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth/2) / specialSliderFull.offsetWidth * 100;
         // console.log(cardPosition);
         specialSliderCard.animate({
-            transform: `scale(${1 + 1 * (position2-cardPosition)/100})`
+            transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
         }, {duration: 1000, fill:"forwards"})
     });
 
