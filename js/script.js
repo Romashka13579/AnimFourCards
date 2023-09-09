@@ -81,8 +81,10 @@ window.addEventListener('mousemove', (event) => {
     var center = (window.innerWidth / 2) / specialSliderFull.offsetWidth * 100 + change;
     specialSliderCards.forEach(specialSliderCard => {
         var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth / 2) / specialSliderFull.offsetWidth * 100;
+        console.log(position);
         specialSliderCard.animate({
-            transform: `scale(${0.9 + 0.7 * (Math.abs(cardPosition - center)) / 100}) perspective(500px) rotateX(0deg) rotateY(${-0.5*(cardPosition - center)}deg) rotateZ(0deg)`
+            transform: `scale(${0.9 + 0.7 * (Math.abs(cardPosition - center)) / 100}) perspective(500px) rotateX(0deg) rotateY(${-0.5*(cardPosition - center)}deg) rotateZ(0deg)`,
+            objectPosition: `${100 + position}% center`
         }, { duration: 500, fill: "forwards" });
     });
 
