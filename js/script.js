@@ -77,13 +77,13 @@ window.addEventListener('mousemove', (event) => {
 
     var specialSliderCards = document.querySelectorAll('.special-slider-card');
     var change = -position;
-    var center = (window.innerWidth/2)/specialSliderFull.offsetWidth*100 + change;
+    var center = (window.innerWidth / 2) / specialSliderFull.offsetWidth * 100 + change;
     specialSliderCards.forEach(specialSliderCard => {
-        var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth/2) / specialSliderFull.offsetWidth * 100;
+        var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth / 2) / specialSliderFull.offsetWidth * 100;
 
         specialSliderCard.animate({
-            transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
-        }, {duration: 1000, fill:"forwards"});
+            transform: `scale(${0.8 + 1 * (Math.abs(cardPosition - center)) / 100})`
+        }, { duration: 1000, fill: "forwards" });
 
         // specialSliderCard.animate({
         //     transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
@@ -108,12 +108,25 @@ window.addEventListener('mouseup', () => {
 var rangeInputs = document.querySelectorAll('.perspective-slider-input');
 var perspectiveCard = document.querySelector('.perspective-card');
 
-console.log(document.querySelector('[data-inputType="perspective"]').dataset.inputType);
-
 rangeInputs.forEach(rangeInput => {
     rangeInput.addEventListener('input', () => {
         var value = rangeInput.value;
-        console.log(rangeInput.dataset.inputType);
-        perspectiveCard.style.transform = `${rangeInput.dataset.inputType}(${value}%)`;
+        switch (rangeInput.dataset.input) {
+            case "perspective":
+                perspectiveCard.dataset.perspective = value;
+                break;
+            case "rotateX":
+                perspectiveCard.dataset.rx = value;
+                break;
+            case "rotateY":
+                perspectiveCard.dataset.ry = value;
+                break;
+            case "rotateZ":
+                perspectiveCard.dataset.rz = value;
+                break;
+            default:
+                break;
+        }
+        perspectiveCard.style.transform = `perspective(${parseInt(perspectiveCard.dataset.perspective) * 50}px) rotateX(${perspectiveCard.dataset.rx}deg) rotateY(${perspectiveCard.dataset.ry}deg) rotateZ(${perspectiveCard.dataset.rz}deg)`;
     });
 });
