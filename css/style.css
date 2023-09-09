@@ -217,7 +217,7 @@ button:focus{
     width: 500px;
     height: 420px;
     background: rgb(203, 203, 203);
-    transform: perspective(1000px) rotateY(20deg) rotateX(10deg);
+    transform: perspective(650px) rotateX(0deg) rotateY(21deg) rotateZ(1deg);
 }
 
 .perspective-simulator{
