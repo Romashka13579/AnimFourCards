@@ -208,16 +208,16 @@ button:focus{
 .special-slider-full{
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    width: fit-content;
+    width: max-content;
 
 }
 
 .special-slider-card{
-    width: 500px;
-    height: 420px;
+    width: 400px;
+    height: 350px;
+    margin: 0px 40px;
     background: rgb(203, 203, 203);
-    transform: perspective(650px) rotateX(0deg) rotateY(21deg) rotateZ(1deg);
+    transform: perspective(650px) rotateX(0deg) rotateY(21deg) rotateZ(0deg);
 }
 
 .perspective-simulator{

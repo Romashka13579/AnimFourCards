@@ -70,6 +70,7 @@ var position = 0;
 
 window.addEventListener('mousemove', (event) => {
     if (pressed == false) { return; }
+    // if (parseFloat(specialSliderFull.dataset.position) > 0 || parseFloat(specialSliderFull.dataset.position) < ((window.innerWidth / specialSliderFull.offsetWidth * 100)) - 100){return;}
     event.preventDefault();
     distance = (event.clientX - startPosition) / specialSliderFull.offsetWidth * 100;
     position = (distance + parseFloat(specialSliderFull.dataset.position));
@@ -80,14 +81,9 @@ window.addEventListener('mousemove', (event) => {
     var center = (window.innerWidth / 2) / specialSliderFull.offsetWidth * 100 + change;
     specialSliderCards.forEach(specialSliderCard => {
         var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth / 2) / specialSliderFull.offsetWidth * 100;
-        console.log(cardPosition - center);
         specialSliderCard.animate({
-            transform: `scale(${0.8 + 1 * (Math.abs(cardPosition - center)) / 100}) perspective(650px) rotateX(0deg) rotateY(${-(cardPosition - center)}deg) rotateZ(1deg)`
+            transform: `scale(${0.9 + 0.7 * (Math.abs(cardPosition - center)) / 100}) perspective(500px) rotateX(0deg) rotateY(${-0.5*(cardPosition - center)}deg) rotateZ(0deg)`
         }, { duration: 500, fill: "forwards" });
-
-        // specialSliderCard.animate({
-        //     transform: `scale(${0.8 + 1 * (Math.abs(cardPosition-center))/100})`
-        // }, {duration: 1000, fill:"forwards"});
     });
 
 });
@@ -95,6 +91,7 @@ window.addEventListener('mousemove', (event) => {
 specialSliderFull.addEventListener('mousedown', (event) => {
     pressed = true;
     startPosition = event.clientX;
+    console.log(parseFloat(specialSliderFull.dataset.position));
 });
 
 window.addEventListener('mouseup', () => {
