@@ -83,7 +83,7 @@ window.addEventListener('mousemove', (event) => {
         var cardPosition = (specialSliderCard.offsetLeft + specialSliderCard.offsetWidth / 2) / specialSliderFull.offsetWidth * 100;
         console.log(position);
         specialSliderCard.animate({
-            transform: `scale(${0.9 + 0.7 * (Math.abs(cardPosition - center)) / 100}) perspective(500px) rotateX(0deg) rotateY(${-0.5*(cardPosition - center)}deg) rotateZ(0deg)`,
+            transform: `scale(${0.9 + 0.7 * (Math.abs(cardPosition - center)) / 100}) perspective(500px) rotateX(0deg) rotateY(${-0.5 * (cardPosition - center)}deg) rotateZ(0deg)`,
             objectPosition: `${100 + position}% center`
         }, { duration: 500, fill: "forwards" });
     });
@@ -123,9 +123,38 @@ rangeInputs.forEach(rangeInput => {
             case "rotateZ":
                 perspectiveCard.dataset.rz = value;
                 break;
+            case "translateX":
+                perspectiveCard.dataset.tx = value;
+                break;
+            case "translateY":
+                perspectiveCard.dataset.ty = value;
+                break;
+            case "translateZ":
+                perspectiveCard.dataset.tz = value;
+                break;
+            case "skewX":
+                perspectiveCard.dataset.sx = value;
+                break;
+            case "skewY":
+                perspectiveCard.dataset.sy = value;
+                break;
+            case "scale":
+                perspectiveCard.dataset.scale = value;
+                break;
             default:
                 break;
         }
-        perspectiveCard.style.transform = `perspective(${parseInt(perspectiveCard.dataset.perspective) * 50}px) rotateX(${perspectiveCard.dataset.rx}deg) rotateY(${perspectiveCard.dataset.ry}deg) rotateZ(${perspectiveCard.dataset.rz}deg)`;
+        perspectiveCard.style.transform = `
+        perspective(${parseInt(perspectiveCard.dataset.perspective) * 50}px) 
+        rotateX(${perspectiveCard.dataset.rx}deg)
+        rotateY(${perspectiveCard.dataset.ry}deg)
+        rotateZ(${perspectiveCard.dataset.rz}deg)
+        translateX(${parseInt(perspectiveCard.dataset.tx) * 4}px)
+        translateY(${parseInt(perspectiveCard.dataset.ty) * 4}px)
+        translateZ(${parseInt(perspectiveCard.dataset.tz) / 10}px)
+        skewX(${perspectiveCard.dataset.sx}deg)
+        skewY(${perspectiveCard.dataset.sy}deg)
+        scale(${parseInt(perspectiveCard.dataset.scale) / 40 + 1})`;
+        console.log(parseInt(perspectiveCard.dataset.ty));
     });
 });
