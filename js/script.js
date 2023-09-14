@@ -82,8 +82,15 @@ function TextOpacity(textSplitted, object) {
             span.innerText = letter;
             object.appendChild(span);
             span.animate({
-                opacity: 1
+                opacity: 1,
+                color: "white"
             }, { duration: 500, fill: "forwards" });
+            setTimeout(() => {
+                span.animate({
+                    opacity: 1,
+                    color: "rgb(192, 192, 192)"
+                }, { duration: 500, fill: "forwards" });
+            }, 700);
         }, (100 * i) + 1000);
     });
 }
