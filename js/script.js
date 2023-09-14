@@ -39,26 +39,43 @@ var interval = null;
 
 textLetterChangings.forEach(textLetterChanging => {
     textLetterChanging.addEventListener('mouseover', () => {
-        var lettersOfText = textLetterChanging.dataset.text.split("");
-        var resulttext = "";
-        var itterations = -1;
-        var index = 0;
-        clearInterval(interval);
-
-        interval = setInterval(() => {
-            lettersOfText.forEach(letter => {
-                if (index < itterations) { resulttext += letter; index++; return; }
-                if (letter == " ") { resulttext += " "; return; }
-                resulttext += ExistingLetters[Math.round(Math.random() * (ExistingLetters.length - 1))];
-            });
-            textLetterChanging.textContent = resulttext;
-            resulttext = "";
-            itterations += 1 / 2;
-            index = 0;
-        }, 30);
+        TextEffect(textLetterChanging);
     });
 });
 
+function TextEffect(textLetterChanging) {
+    var lettersOfText = textLetterChanging.dataset.text.split("");
+    var resulttext = "";
+    var itterations = -1;
+    var index = 0;
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+        lettersOfText.forEach(letter => {
+            if (index < itterations) { resulttext += letter; index++; return; }
+            if (letter == " ") { resulttext += " "; return; }
+            resulttext += ExistingLetters[Math.round(Math.random() * (ExistingLetters.length - 1))];
+        });
+        textLetterChanging.textContent = resulttext;
+        resulttext = "";
+        itterations += 1 / 2;
+        index = 0;
+    }, 30);
+}
+
+
+
+
+var textOpacityTransitions = document.querySelectorAll('.text-opacity-transition');
+
+// textOpacityTransitions.forEach(textOpacityTransition => {
+//     var lettersOfText = textOpacityTransition.dataset.text.split("");
+//     console.log();
+// });
+var lettersOfText = textOpacityTransitions[0].innerHTML.split("");
+textOpacityTransitions[0].innerHTML = "";
+var lettersOfText = textOpacityTransitions[0].innerHTML.split("");
+console.log(lettersOfText);
 
 
 
