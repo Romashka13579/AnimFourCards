@@ -227,12 +227,13 @@ button:focus{
 .text-opacity-transition:nth-child(2){
     width: 700px;
     font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 .text-opacity-transition:nth-child(2) span{
     width: 360px;
+}
+
+.text-opacity-span{
+    opacity: 0;
 }
 
 .special-slider-anymation{

@@ -68,14 +68,25 @@ function TextEffect(textLetterChanging) {
 
 var textOpacityTransitions = document.querySelectorAll('.text-opacity-transition');
 
-// textOpacityTransitions.forEach(textOpacityTransition => {
-//     var lettersOfText = textOpacityTransition.dataset.text.split("");
-//     console.log();
-// });
-var lettersOfText = textOpacityTransitions[0].innerHTML.split("");
-textOpacityTransitions[0].innerHTML = "";
-var lettersOfText = textOpacityTransitions[0].innerHTML.split("");
-console.log(lettersOfText);
+textOpacityTransitions.forEach(text => {
+    var textSplitted = text.innerText.split("");
+    text.innerText = "";
+    TextOpacity(textSplitted, text);
+});
+
+function TextOpacity(textSplitted, object) {
+    textSplitted.forEach((letter, i) => {
+        timeout = setTimeout(() => {
+            const span = document.createElement("span");
+            span.className = "text-opacity-span";
+            span.innerText = letter;
+            object.appendChild(span);
+            span.animate({
+                opacity: 1
+            }, { duration: 500, fill: "forwards" });
+        }, (100 * i) + 1000);
+    });
+}
 
 
 
