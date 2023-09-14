@@ -84,14 +84,12 @@ function TextOpacity(textSplitted, object) {
             span.animate({
                 opacity: 1,
                 color: "white",
-                boxShadow: "0px 0px 5px 3px rgba(255,255,255,0.15)",
                 background: "rgba(255,255,255,0.15)"
             }, { duration: 500, fill: "forwards" });
             setTimeout(() => {
                 span.animate({
                     opacity: 1,
                     color: "rgb(192, 192, 192)",
-                    boxShadow: "0px 0px 5px 3px rgba(255,255,255,0.0)",
                     background: "rgba(255,255,255,0.0)"
                 }, { duration: 500, fill: "forwards" });
             }, 700);

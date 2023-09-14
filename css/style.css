@@ -234,6 +234,8 @@ button:focus{
 
 .text-opacity-span{
     opacity: 0;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .special-slider-anymation{
