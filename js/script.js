@@ -75,22 +75,25 @@ textOpacityTransitions.forEach(text => {
 });
 
 function TextOpacity(textSplitted, object) {
+    const spanBack = document.createElement("div");
+    spanBack.className = "text-opacity-span-back";
+    object.appendChild(spanBack);
     textSplitted.forEach((letter, i) => {
         timeout = setTimeout(() => {
             const span = document.createElement("span");
             span.className = "text-opacity-span";
             span.innerText = letter;
             object.appendChild(span);
+            spanBack.style.left = `${span.offsetLeft}px`;
+            spanBack.style.top = `${span.offsetTop}px`;
+            console.log(spanBack.offsetLeft);
             span.animate({
                 opacity: 1,
-                color: "white",
-                background: "rgba(255,255,255,0.15)"
+                color: "white"
             }, { duration: 500, fill: "forwards" });
             setTimeout(() => {
                 span.animate({
-                    opacity: 1,
-                    color: "rgb(192, 192, 192)",
-                    background: "rgba(255,255,255,0.0)"
+                    color: "rgb(192, 192, 192)"
                 }, { duration: 500, fill: "forwards" });
             }, 700);
         }, (100 * i) + 1000);
