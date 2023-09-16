@@ -84,7 +84,7 @@ function TextOpacity(textSplitted, object) {
             span.className = "text-opacity-span";
             span.innerText = letter;
             object.appendChild(span);
-            spanBack.style.left = `${span.offsetLeft}px`;
+            spanBack.style.left = `${span.offsetLeft-20}px`;
             spanBack.style.top = `${span.offsetTop}px`;
             console.log(spanBack.offsetLeft);
             span.animate({

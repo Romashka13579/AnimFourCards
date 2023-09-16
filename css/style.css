@@ -237,12 +237,12 @@ button:focus{
 }
 
 .text-opacity-span-back{
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
     width: 47px;
     height: 47px;
     position: absolute;
-    border-radius: 50%;
-    filter: blur(1px);
+    border-radius: 40%;
+    filter: blur(10px);
 }
 
 .special-slider-anymation{
