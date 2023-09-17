@@ -222,6 +222,7 @@ button:focus{
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 180%;
+    overflow: hidden;
 }
 
 .text-opacity-transition:nth-child(2){
@@ -238,11 +239,11 @@ button:focus{
 
 .text-opacity-span-back{
     background: rgba(255,255,255,0.15);
-    width: 47px;
+    width: 94px;
     height: 47px;
     position: absolute;
     border-radius: 40%;
-    filter: blur(10px);
+    filter: blur(20px);
 }
 
 .special-slider-anymation{
