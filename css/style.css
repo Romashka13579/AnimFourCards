@@ -245,6 +245,7 @@ button:focus{
     position: absolute;
     border-radius: 40%;
     filter: blur(20px);
+    opacity: 0;
     transform: translateY(-25%) translateX(-100%);
 }
 

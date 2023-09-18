@@ -80,6 +80,10 @@ function TextOpacity(textSplitted, object, length) {
     spanBack.className = "text-opacity-span-back";
     spanBack.style.width = `${parseInt(object.dataset.sizing) * 3}px`;
     spanBack.style.height = `${parseInt(object.dataset.sizing) * 2}px`;
+    spanBack.animate({
+        opacity: 1
+    }, { duration: 1000, fill: "forwards" });
+
     object.appendChild(spanBack);
 
     textSplitted.forEach((letter, i) => {
@@ -101,10 +105,16 @@ function TextOpacity(textSplitted, object, length) {
 
             spanBack.style.left = `${span.offsetLeft}px`;
             spanBack.style.top = `${span.offsetTop}px`;
-            if (i == length-1) {spanBack.remove();}
+            if (i == length-1) {Animations(spanBack, 1000, "scale(0)")}
 
-        }, (100 * i) + 1000);
+        }, (100 * i));
     });
+}
+
+function Animations(object, duration, anim){
+    object.animate({
+        transform: anim
+    }, { duration: duration, fill: "forwards" });
 }
 
 
