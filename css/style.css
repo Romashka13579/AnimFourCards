@@ -240,13 +240,12 @@ button:focus{
 
 .text-opacity-span-back{
     background: rgba(255,255,255,0.15);
-    width: 94px;
-    height: 47px;
     position: absolute;
     border-radius: 40%;
     filter: blur(20px);
     opacity: 0;
-    transform: translateY(-25%) translateX(-100%);
+    transform: translateY(-25%) translateX(-100%) scale(1);
+    transition: filter 1000ms;
 }
 
 .special-slider-anymation{

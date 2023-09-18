@@ -105,16 +105,10 @@ function TextOpacity(textSplitted, object, length) {
 
             spanBack.style.left = `${span.offsetLeft}px`;
             spanBack.style.top = `${span.offsetTop}px`;
-            if (i == length-1) {Animations(spanBack, 1000, "scale(0)")}
+            if (i == length-1) {spanBack.style.filter = "blur(50px)";}
 
         }, (100 * i));
     });
-}
-
-function Animations(object, duration, anim){
-    object.animate({
-        transform: anim
-    }, { duration: duration, fill: "forwards" });
 }
 
 
