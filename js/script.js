@@ -70,23 +70,23 @@ var textOpacityTransitions = document.querySelectorAll('.text-opacity-transition
 
 textOpacityTransitions.forEach(text => {
     var textSplitted = text.innerText.split("");
+    var length = text.innerText.length;
     text.innerText = "";
-    TextOpacity(textSplitted, text);
+    TextOpacity(textSplitted, text, length);
 });
 
-function TextOpacity(textSplitted, object) {
+function TextOpacity(textSplitted, object, length) {
     const spanBack = document.createElement("div");
     spanBack.className = "text-opacity-span-back";
     object.appendChild(spanBack);
+
     textSplitted.forEach((letter, i) => {
         timeout = setTimeout(() => {
             const span = document.createElement("span");
             span.className = "text-opacity-span";
             span.innerText = letter;
+            console.log(i);
             object.appendChild(span);
-            spanBack.style.left = `${span.offsetLeft-80}px`;
-            spanBack.style.top = `${span.offsetTop}px`;
-            console.log(spanBack.offsetLeft);
             span.animate({
                 opacity: 1,
                 color: "white"
@@ -96,6 +96,11 @@ function TextOpacity(textSplitted, object) {
                     color: "rgb(192, 192, 192)"
                 }, { duration: 500, fill: "forwards" });
             }, 700);
+
+            spanBack.style.left = `${span.offsetLeft - 80}px`;
+            spanBack.style.top = `${span.offsetTop}px`;
+            if (i == length-1) {spanBack.remove();}
+
         }, (100 * i) + 1000);
     });
 }
