@@ -78,6 +78,8 @@ textOpacityTransitions.forEach(text => {
 function TextOpacity(textSplitted, object, length) {
     const spanBack = document.createElement("div");
     spanBack.className = "text-opacity-span-back";
+    spanBack.style.width = `${parseInt(object.dataset.sizing) * 3}px`;
+    spanBack.style.height = `${parseInt(object.dataset.sizing) * 2}px`;
     object.appendChild(spanBack);
 
     textSplitted.forEach((letter, i) => {
@@ -97,7 +99,7 @@ function TextOpacity(textSplitted, object, length) {
                 }, { duration: 500, fill: "forwards" });
             }, 700);
 
-            spanBack.style.left = `${span.offsetLeft - 80}px`;
+            spanBack.style.left = `${span.offsetLeft}px`;
             spanBack.style.top = `${span.offsetTop}px`;
             if (i == length-1) {spanBack.remove();}
 

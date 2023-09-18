@@ -223,6 +223,7 @@ button:focus{
     font-family: Arial, Helvetica, sans-serif;
     line-height: 180%;
     overflow: hidden;
+    width: fit-content;
 }
 
 .text-opacity-transition:nth-child(2){
@@ -244,6 +245,7 @@ button:focus{
     position: absolute;
     border-radius: 40%;
     filter: blur(20px);
+    transform: translateY(-25%) translateX(-100%);
 }
 
 .special-slider-anymation{
