@@ -91,7 +91,6 @@ function TextOpacity(textSplitted, object, length) {
             const span = document.createElement("span");
             span.className = "text-opacity-span";
             span.innerText = letter;
-            console.log(i);
             object.appendChild(span);
             span.animate({
                 opacity: 1,

@@ -295,9 +295,26 @@ button:focus{
 }
 
 .perspective-card{
+    position: relative;
     width: 440px;
     height: 360px;
     background: rgb(203, 203, 203);
+    transform-style: preserve-3d;
+}
+
+.perspective-card::after,
+.perspective-card::before{
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+
+.perspective-card::after{
+    content: "";
+    display: block;
+    inset: -2rem;
+    transform: translateZ(-100px);
+    background: linear-gradient(-45deg, green, yellow);
 }
 
 .perspective-sliders{
