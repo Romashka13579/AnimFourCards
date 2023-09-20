@@ -401,6 +401,36 @@ button:focus{
     background: greenyellow;
 }
 
+.fun-3d-cubic-2part{
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1/1;
+    background: rgb(0, 73, 128);
+    transform: perspective(2000px);
+    transform-style: preserve-3d;
+    transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fun-3d-cubic-2part::before{
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    transform: rotateY(-90deg) translateZ(150px) translateX(150px);
+    background: rgb(74, 0, 86);
+}
+
+.fun-3d-cubic-2part::after{
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    transform: rotateY(-90deg) translateZ(-150px) translateX(150px);
+    background: rgb(255, 127, 47);
+}
+
 .fun-cubic-button-up,
 .fun-cubic-button-down{
     background: white;
