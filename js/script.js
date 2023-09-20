@@ -217,9 +217,15 @@ var funCubicUp = document.querySelector('.fun-cubic-button-up');
 var funCubicDown = document.querySelector('.fun-cubic-button-down');
 
 funCubicUp.addEventListener('click', () => {
-    fun3dCubic1part.style.transform += "rotateX(-90deg) translateZ(150px)"
+    var i = parseInt(fun3dCubic1part.dataset.index);
+    i++;
+    fun3dCubic1part.dataset.index = i;
+    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)`
 });
 
 funCubicDown.addEventListener('click', () => {
-    fun3dCubic1part.style.transform += "rotateX(90deg) translateZ(150px)"
+    var i = parseInt(fun3dCubic1part.dataset.index);
+    i--;
+    fun3dCubic1part.dataset.index = i;
+    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)`
 });
