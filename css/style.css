@@ -296,10 +296,28 @@ button:focus{
 
 .perspective-card{
     position: relative;
-    width: 440px;
-    height: 360px;
-    background: rgb(203, 203, 203);
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    padding: 50px;
+    background: rgb(5, 33, 0);
     transform-style: preserve-3d;
+    width: 250px;
+    aspect-ratio : 3 / 2;
+    margin: 50px;
+}
+
+.perspective-card span{
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.perspective-card-line{
+    width: 100%;
+    height: 2px;
+    background: wheat;
 }
 
 .perspective-card::after,
@@ -312,7 +330,7 @@ button:focus{
 .perspective-card::after{
     content: "";
     display: block;
-    inset: -2rem;
+    inset: -3rem;
     transform: translateZ(-100px);
     background: linear-gradient(-45deg, green, yellow);
 }
