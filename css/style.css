@@ -356,4 +356,54 @@ button:focus{
     font-weight: 600;
     text-align: center;
 }
-  
+
+
+
+.fun-3d-cubic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    overflow: hidden;
+    gap: 20px;
+}  
+
+.fun-3d-cubic-1part{
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1/1;
+    background: green;
+    transform: perspective(2000px);
+    transform-style: preserve-3d;
+    transition: transform 10000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fun-3d-cubic-1part::before{
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    transform: rotateX(-90deg) translateZ(150px) translateY(150px);
+    background: blue;
+}
+
+.fun-3d-cubic-1part::after{
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    transform: rotateX(-90deg) translateZ(-150px) translateY(150px);
+    background: greenyellow;
+}
+
+.fun-cubic-button-up,
+.fun-cubic-button-down{
+    background: white;
+    width: 50px;
+    aspect-ratio: 1/1;
+}

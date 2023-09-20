@@ -208,3 +208,18 @@ rangeInputs.forEach(rangeInput => {
         console.log(parseInt(perspectiveCard.dataset.ty));
     });
 });
+
+
+
+
+var fun3dCubic1part = document.querySelector('.fun-3d-cubic-1part');
+var funCubicUp = document.querySelector('.fun-cubic-button-up');
+var funCubicDown = document.querySelector('.fun-cubic-button-down');
+
+funCubicUp.addEventListener('click', () => {
+    fun3dCubic1part.style.transform += "rotateX(-90deg)"
+});
+
+funCubicDown.addEventListener('click', () => {
+    fun3dCubic1part.style.transform += "rotateX(90deg)"
+});
