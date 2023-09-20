@@ -220,12 +220,12 @@ funCubicUp.addEventListener('click', () => {
     var i = parseInt(fun3dCubic1part.dataset.index);
     i++;
     fun3dCubic1part.dataset.index = i;
-    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)`
+    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)` // perspective(2000px) works, but not the way I want, need to understand why
 });
 
 funCubicDown.addEventListener('click', () => {
     var i = parseInt(fun3dCubic1part.dataset.index);
     i--;
     fun3dCubic1part.dataset.index = i;
-    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)`
+    fun3dCubic1part.style.transform = `rotateX(${90 * (2-i)}deg) translateZ(150px)` // perspective(2000px) works, but not the way I want, need to understand why
 });
