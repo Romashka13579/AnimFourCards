@@ -222,8 +222,8 @@ funCubicUp.addEventListener('click', () => {
     i++;
     fun3dCubic1part.dataset.index = i;
     fun3dCubic2part.dataset.index = i;
-    fun3dCubic1part.style.transform = ` translateZ(300px) translateY(150px) rotateX(${90 * (2-i)}deg)` // perspective(2000px) works, but not the way I want, need to understand why
-    fun3dCubic2part.style.transform = `translateZ(-150px) rotateX(${90 * (2-i)}deg)` // perspective(2000px) works, but not the way I want, need to understand why
+    fun3dCubic1part.style.transform = `perspective(2000px) rotateX(${90 * (2-i)}deg) translateZ(150px)` // perspective(2000px) works, but not the way I want, need to understand why
+    fun3dCubic2part.style.transform = `perspective(2000px) rotateX(${90 * (2-i)}deg) translateZ(-150px)` // perspective(2000px) works, but not the way I want, need to understand why
 });
 
 funCubicDown.addEventListener('click', () => {
