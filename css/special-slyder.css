@@ -1,0 +1,32 @@
+.special-slider-anymation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.special-slider-overflow{
+    width: 100%;
+    transform: rotate(8deg);
+}
+
+.special-slider-full{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+
+}
+
+.special-slider-card{
+    width: 400px;
+    height: 350px;
+    margin: 0px 40px;
+    background: rgb(203, 203, 203);
+    object-fit: cover;
+    object-position: 100% center;
+    transform: perspective(650px) rotateX(0deg) rotateY(21deg) rotateZ(0deg);
+}
