@@ -18,6 +18,15 @@
     transform-style: preserve-3d;
 }
 
+.carousel-slider-text{
+    position: absolute;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(7, 125, 198);
+    left: 10px;
+    bottom: 10px;
+}
+
 .carousel-slider-card{
     position: absolute;
     width: 100%;
@@ -25,22 +34,32 @@
     background: white;
     transform-style: preserve-3d;
     border-radius: 25px;
+    box-sizing: border-box;
 }
 
-.carousel-slider-card:nth-child(1){background: url(/images/cats/rasheeque-ahnaf-piash-wMYJqu9xC4M-unsplash.jpg) center/cover;}
-.carousel-slider-card:nth-child(2){background: url(/images/cats/alex-meier-ZY97RvOiAOA-unsplash.jpg) center/cover;}
-.carousel-slider-card:nth-child(3){background: url(/images/cats/engin-akyurt-jZMYnYUgrGU-unsplash.jpg) center/cover;}
-.carousel-slider-card:nth-child(4){background: url(/images/cats/jan-gustavsson-GAzMk0dpNUY-unsplash.jpg) center/cover;}
-.carousel-slider-card:nth-child(5){background: url(/images/cats/marek-studzinski-vqDSbn26WgE-unsplash.jpg) center/cover;}
-.carousel-slider-card:nth-child(6){background: url(/images/cats/nagara-oyodo-FN5e79PfD4g-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(1), .carousel-slider-card:nth-child(1)::before{background: url(/images/cats/rasheeque-ahnaf-piash-wMYJqu9xC4M-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(2), .carousel-slider-card:nth-child(2)::before{background: url(/images/cats/alex-meier-ZY97RvOiAOA-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(3), .carousel-slider-card:nth-child(3)::before{background: url(/images/cats/engin-akyurt-jZMYnYUgrGU-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(4), .carousel-slider-card:nth-child(4)::before{background: url(/images/cats/jan-gustavsson-GAzMk0dpNUY-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(5), .carousel-slider-card:nth-child(5)::before{background: url(/images/cats/marek-studzinski-vqDSbn26WgE-unsplash.jpg) center/cover;}
+.carousel-slider-card:nth-child(6), .carousel-slider-card:nth-child(6)::before{background: url(/images/cats/nagara-oyodo-FN5e79PfD4g-unsplash.jpg) center/cover;}
+
+.carousel-slider-card::before{
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: -0.1rem;
+    transform: translateZ(-0.1px);
+    filter: blur(2px);
+}
 
 .carousel-buttons{
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .carousel-button{
-    width: 50px;
-    height: 50px;
-    background: white;
+    font-size: 50px;
+    color: rgb(7, 125, 198);
 }
