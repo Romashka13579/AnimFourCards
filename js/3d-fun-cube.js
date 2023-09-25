@@ -4,6 +4,7 @@ var funCubicUp = document.querySelector('.fun-cubic-button-up');
 var funCubicDown = document.querySelector('.fun-cubic-button-down');
 
 funCubicUp.addEventListener('click', () => {
+    
     var i = parseInt(fun3dCubic1part.dataset.index);
     i = i <= 4? i++ : i=1;
     fun3dCubic1part.dataset.index = i;

@@ -1,0 +1,23 @@
+.carousel-slider-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    gap: 50px;
+}
+
+.carousel-slider-block{
+    display: flex;
+    position: relative;
+    transform: perspective(600px) rotateX(-10deg);
+    gap: 20px;
+}
+
+.carousel-slider-card{
+    width: 250px;
+    height: 150px;
+    background: white;
+}
