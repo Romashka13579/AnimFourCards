@@ -17,48 +17,49 @@
     transform-style: preserve-3d;
 }
 
-.fun-3d-cubic-1part{
+.fun-3d-cubic-part{
     position: absolute;
     width: 100%;
     aspect-ratio: 1/1;
-    background: green;
-    transform: perspective(700px) translateZ(150px);
     transform-style: preserve-3d;
     transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0.9;
+}
+
+.fun-3d-cubic-1part{
+    background: green;
+    transform: perspective(700px) rotateX(0deg) translateZ(150px);
 }
 
 .fun-3d-cubic-2part{
-    position: absolute;
-    width: 300px;
-    aspect-ratio: 1/1;
     background: rgb(0, 73, 128);
     transform: perspective(700px) rotateX(90deg) translateZ(150px);
-    transform-style: preserve-3d;
-    transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .fun-3d-cubic-3part{
-    position: absolute;
-    width: 300px;
-    aspect-ratio: 1/1;
     background: rgb(111, 128, 0);
     transform: perspective(700px) rotateX(180deg) translateZ(150px);
-    transform-style: preserve-3d;
-    transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .fun-3d-cubic-4part{
-    position: absolute;
-    width: 300px;
-    aspect-ratio: 1/1;
     background: rgb(128, 94, 0);
     transform: perspective(700px) rotateX(270deg) translateZ(150px);
-    transform-style: preserve-3d;
-    transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fun-3d-cubic-5part{
+    background: rgb(0, 4, 128);
+    transform: perspective(700px) rotateY(90deg) translateZ(150px);
+}
+
+.fun-3d-cubic-6part{
+    background: rgb(128, 0, 98);
+    transform: perspective(700px) rotateY(270deg) translateZ(150px);
 }
 
 .fun-cubic-button-up,
-.fun-cubic-button-down{
+.fun-cubic-button-down,
+.fun-cubic-button-left,
+.fun-cubic-button-right{
     background: white;
     width: 50px;
     aspect-ratio: 1/1;
