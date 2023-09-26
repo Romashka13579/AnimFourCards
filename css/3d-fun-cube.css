@@ -7,13 +7,14 @@
     background: var(--background);
     flex-direction: column;
     overflow: hidden;
-    gap: 20px;
+    gap: 100px;
 }  
 
 .fun-3d-cubic-block{
     position: relative;
     width: 300px;
     aspect-ratio: 1/1;
+    transform-style: preserve-3d;
 }
 
 .fun-3d-cubic-1part{
@@ -21,37 +22,17 @@
     width: 100%;
     aspect-ratio: 1/1;
     background: green;
-    transform: perspective(2000px)  translateZ(150px);
+    transform: perspective(700px) translateZ(150px);
     transform-style: preserve-3d;
     transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
-/* .fun-3d-cubic-1part::before{
-    position: absolute;
-    border-radius: inherit;
-    content: "";
-    display: block;
-    inset: 0rem;
-    transform: translateZ(-300px);
-    background: blue;
-} */
-
-/* .fun-3d-cubic-1part::after{
-    position: absolute;
-    border-radius: inherit;
-    content: "";
-    display: block;
-    inset: 0rem;
-    transform: rotateX(-90deg) translateZ(-150px) translateY(150px);
-    background: greenyellow;
-}*/
 
 .fun-3d-cubic-2part{
     position: absolute;
     width: 300px;
     aspect-ratio: 1/1;
     background: rgb(0, 73, 128);
-    transform: perspective(2000px) rotateX(-90deg) translateZ(-150px);
+    transform: perspective(700px) rotateX(90deg) translateZ(150px);
     transform-style: preserve-3d;
     transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -60,8 +41,8 @@
     position: absolute;
     width: 300px;
     aspect-ratio: 1/1;
-    background: rgb(0, 73, 128);
-    transform: perspective(2000px) rotateX(-90deg) translateZ(-150px);
+    background: rgb(111, 128, 0);
+    transform: perspective(700px) rotateX(180deg) translateZ(150px);
     transform-style: preserve-3d;
     transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -70,31 +51,11 @@
     position: absolute;
     width: 300px;
     aspect-ratio: 1/1;
-    background: rgb(0, 73, 128);
-    transform: perspective(2000px) rotateX(-90deg) translateZ(-150px);
+    background: rgb(128, 94, 0);
+    transform: perspective(700px) rotateX(270deg) translateZ(150px);
     transform-style: preserve-3d;
     transition: transform 2000ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
-/* .fun-3d-cubic-2part::before{
-    position: absolute;
-    border-radius: inherit;
-    content: "";
-    display: block;
-    inset: 0rem;
-    transform: rotateY(-90deg) translateZ(150px) translateX(150px);
-    background: rgb(74, 0, 86);
-} */
-
-/*.fun-3d-cubic-2part::after{
-    position: absolute;
-    border-radius: inherit;
-    content: "";
-    display: block;
-    inset: 0rem;
-    transform: rotateY(-90deg) translateZ(-150px) translateX(150px);
-    background: rgb(255, 127, 47);
-} */
 
 .fun-cubic-button-up,
 .fun-cubic-button-down{

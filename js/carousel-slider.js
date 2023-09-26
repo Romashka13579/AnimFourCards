@@ -5,7 +5,9 @@ var k = 0;
 carouselSliderCard.forEach(card => {
     i++;
     card.style.transform = `rotateY(${60 * (i - 1)}deg) translateZ(270px)`;
-    card.style.transition = "1000ms";
+    setTimeout(() => {
+        card.style.transition = "1000ms";
+    }, 10);
 });
 
 var carouselButtonLeft = document.querySelector('.carousel-button-left');
