@@ -17,12 +17,27 @@
 }
 
 .dog-flipping-card{
+    position: relative;
     width: 300px;
     aspect-ratio: 1/1;
-    background: rgb(152, 152, 152);
     padding: 20px;
     box-sizing: border-box;
+    transition: 500ms all;
 }
+
+.dog-flipping-card::before {
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    filter: grayscale(80%);
+    transition: 500ms all;
+  }
+
+.dog-flipping-card:nth-child(1)::before{background: url(/images/dogs/ash-v0_MCllHY9M-unsplash.jpg) center/cover;}
+.dog-flipping-card:nth-child(2)::before{background: url(/images/dogs/ralu-gal-G8cB8hY3yvU-unsplash.jpg) center/cover;}
+.dog-flipping-card:nth-child(3)::before{background: url(/images/dogs/richard-brutyo-Sg3XwuEpybU-unsplash.jpg) center/cover;}
 
 .dog-flipping-overline{
     position: relative;
@@ -31,7 +46,7 @@
     align-items: end;
     aspect-ratio: 1/1;
     overflow: hidden;
-    border: 2px solid white;
+    border: 2px solid var(--text-dogs-flipping);
 }
 
 .dog-flipping-text{
@@ -46,7 +61,7 @@
 }
 
 .dog-flipping-name{
-    color: rgb(29, 29, 29);
+    color: var(--text-dogs-flipping);
     font-size: 24px;
     font-weight: 900;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -55,25 +70,21 @@
 .dog-flipping-line{
     width: 100px;
     height: 2px;
-    background: rgb(29, 29, 29);
+    background: var(--text-dogs-flipping);
     opacity: 0;
     transition: 500ms all;
 }
 
 .dog-flipping-hidden{
     opacity: 0;
+    color: var(--text-dogs-flipping);
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 500ms all;
 }
 
-.dog-flipping-card:hover .dog-flipping-line{
-    opacity: 1;
-    width: 150px;
-}
-
-.dog-flipping-card:hover .dog-flipping-hidden{
-    opacity: 1;
-}
-
-.dog-flipping-card:hover .dog-flipping-text{
-    bottom: 20px;
-}
+.dog-flipping-card:hover .dog-flipping-line{opacity: 1; width: 150px;}
+.dog-flipping-card:hover .dog-flipping-hidden{opacity: 1;}
+.dog-flipping-card:hover .dog-flipping-text{bottom: 20px;}
+.dog-flipping-card:hover{scale: 1.05;}
+.dog-flipping-card:hover::before{filter: grayscale(80%) brightness(0.4);}
