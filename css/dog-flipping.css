@@ -1,0 +1,79 @@
+.dog-flipping-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dog-flipping-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.dog-flipping-card{
+    width: 300px;
+    aspect-ratio: 1/1;
+    background: rgb(152, 152, 152);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.dog-flipping-overline{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.dog-flipping-text{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    bottom: -20px;
+    gap: 10px;
+    transition: 500ms all;
+}
+
+.dog-flipping-name{
+    color: rgb(29, 29, 29);
+    font-size: 24px;
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dog-flipping-line{
+    width: 100px;
+    height: 2px;
+    background: rgb(29, 29, 29);
+    opacity: 0;
+    transition: 500ms all;
+}
+
+.dog-flipping-hidden{
+    opacity: 0;
+    transition: 500ms all;
+}
+
+.dog-flipping-card:hover .dog-flipping-line{
+    opacity: 1;
+    width: 150px;
+}
+
+.dog-flipping-card:hover .dog-flipping-hidden{
+    opacity: 1;
+}
+
+.dog-flipping-card:hover .dog-flipping-text{
+    bottom: 20px;
+}
