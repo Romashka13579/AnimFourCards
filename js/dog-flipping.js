@@ -1,4 +1,4 @@
-var dogFlippingCards = document.querySelectorAll('.dog-flipping-card');
+var dogFlippingCards = document.querySelectorAll('.dog-flipping-sandwich');
 
 dogFlippingCards.forEach(card => {
     card.addEventListener('click', () => {

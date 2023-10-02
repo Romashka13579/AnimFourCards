@@ -16,11 +16,20 @@
     gap: 50px;
 }
 
-.dog-flipping-card{
+.dog-flipping-sandwich{
     position: relative;
     width: 300px;
     aspect-ratio: 1/1;
+    transition: 500ms all;
+    transform-style: preserve-3d;
+}
+
+.dog-flipping-card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
     padding: 20px;
+    transform: translateZ(2px);
     box-sizing: border-box;
     transition: 500ms all;
 }
@@ -33,11 +42,19 @@
     inset: 0rem;
     filter: grayscale(80%);
     transition: 500ms all;
+    transform: translateZ(10px);
   }
 
-.dog-flipping-card:nth-child(1)::before{background: url(/images/dogs/ash-v0_MCllHY9M-unsplash.jpg) center/cover;}
-.dog-flipping-card:nth-child(2)::before{background: url(/images/dogs/ralu-gal-G8cB8hY3yvU-unsplash.jpg) center/cover;}
-.dog-flipping-card:nth-child(3)::before{background: url(/images/dogs/richard-brutyo-Sg3XwuEpybU-unsplash.jpg) center/cover;}
+.dog-flipping-sandwich:nth-child(1) .dog-flipping-card::before{background: url(/images/dogs/ash-v0_MCllHY9M-unsplash.jpg) center/cover;}
+.dog-flipping-sandwich:nth-child(2) .dog-flipping-card::before{background: url(/images/dogs/ralu-gal-G8cB8hY3yvU-unsplash.jpg) center/cover;}
+.dog-flipping-sandwich:nth-child(3) .dog-flipping-card::before{background: url(/images/dogs/richard-brutyo-Sg3XwuEpybU-unsplash.jpg) center/cover;}
+
+.dog-flipping-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
 
 .dog-flipping-overline{
     position: relative;
@@ -83,8 +100,12 @@
     transition: 500ms all;
 }
 
-.dog-flipping-card:hover .dog-flipping-line{opacity: 1; width: 150px;}
-.dog-flipping-card:hover .dog-flipping-hidden{opacity: 1;}
-.dog-flipping-card:hover .dog-flipping-text{bottom: 20px;}
-.dog-flipping-card:hover{scale: 1.05;}
-.dog-flipping-card:hover::before{filter: grayscale(80%) brightness(0.4);}
+.dog-flipping-sandwich:hover .dog-flipping-line{opacity: 1; width: 150px;}
+.dog-flipping-sandwich:hover .dog-flipping-hidden{opacity: 1;}
+.dog-flipping-sandwich:hover .dog-flipping-text{bottom: 20px;}
+.dog-flipping-sandwich:hover{scale: 1.05;}
+.dog-flipping-sandwich:hover .dog-flipping-card::before{filter: grayscale(80%) brightness(0.4);}
+
+.dog-flipping-card[data-flipped = "1"]{
+    scale: 1.05;
+}
