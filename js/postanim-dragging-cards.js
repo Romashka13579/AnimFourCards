@@ -1,24 +1,26 @@
-cards = document.querySelectorAll('.postanim-dragging-card');
+var cards = document.querySelectorAll('.postanim-dragging-card');
+var Area = document.querySelector('.postanim-dragging-cards');
 
 cards.forEach(card => {
-    card.addEventListener('mousedown', () => {
+    card.addEventListener('mousedown', (event) => {
         card.dataset.down = "1";
+        card.dataset.left = event.clientX - card.getBoundingClientRect().left;
+        card.dataset.top = event.clientY - card.getBoundingClientRect().top;
     });
-    card.addEventListener("mousemove", (event) => {
+    Area.addEventListener("mousemove", (event) => {
         if(card.dataset.down == "1"){
             card.dataset.dragged = "1";
             var x = event.clientX;
             var y = event.clientY;
-            console.log(x, y);
             if(card.dataset.dragged == "1"){
-                card.style.left = `${x - 100}px`;
+                card.style.left = `${x - 200}px`;
                 card.style.top = `${y - 100}px`;
-                console.log(`${x - 100}px`);
+                console.log(y - (y - parseInt(card.dataset.top)));
             }
         }
     });
     card.addEventListener('mouseup', () => {
-        card.dataset.dragged = "0";
+        card.dataset.dragged = "0"; 
         card.dataset.down = "0";
     });
 });
