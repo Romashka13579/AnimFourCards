@@ -19,6 +19,7 @@ cards.forEach(card => {
     });
     card.addEventListener('mouseup', () => {
         card.dataset.dragged = "0";
+        card.dataset.down = "0";
     });
 });
 
