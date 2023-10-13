@@ -1,11 +1,14 @@
 var cards = document.querySelectorAll('.postanim-dragging-card');
 var Area = document.querySelector('.postanim-dragging-cards');
 
+var clone = cards[0].cloneNode(true);
+Area.prepend(clone);
+clone.style.display = "block";
+
 cards.forEach(card => {
-    card.addEventListener('mousedown', (event) => {
+    card.addEventListener('mousedown', () => {
         card.dataset.down = "1";
-        var left = event.clientX - card.getBoundingClientRect().left;
-        var top = event.clientY - card.getBoundingClientRect().top;
+        clone.style.display = "block";
     });
     window.addEventListener("mousemove", (event) => {
         if(card.dataset.down == "1"){
@@ -13,16 +16,16 @@ cards.forEach(card => {
             var x = event.clientX;
             var y = event.clientY;
             if(card.dataset.dragged == "1"){
-                card.style.position = "absolute";
-                card.style.left = `${x - (card.offsetWidth)/2}px`;
-                card.style.top = `${y - (card.offsetHeight)/2}px`;
-                console.log(y - (y - parseInt(card.dataset.top)));
+                clone.style.position = "absolute";
+                clone.style.left = `${x - (card.offsetWidth)/2}px`;
+                clone.style.top = `${y - (card.offsetHeight)/2}px`;
             }
         }
     });
-    card.addEventListener('mouseup', () => {
+    clone.addEventListener('mouseup', () => {
         card.dataset.dragged = "0"; 
         card.dataset.down = "0";
+        clone.style.display = "none";
     });
 });
 

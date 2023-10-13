@@ -28,6 +28,6 @@
     transition: 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-/* .postanim-dragging-card[data-dragged = "1"]{
-    position: absolute;
-} */
+.postanim-dragging-card[data-dragged = "1"]{
+    size: 0;
+}
