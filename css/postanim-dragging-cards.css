@@ -29,3 +29,7 @@
 .postanim-dragging-card[data-dragged = "1"]{
     transform: scale(0);
 }
+
+.dragged{
+    transform: scale(0);
+}
