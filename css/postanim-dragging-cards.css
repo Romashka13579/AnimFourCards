@@ -23,13 +23,16 @@
 .postanim-dragging-card{
     width: 250px;
     height: 160px;
-    background: rgb(232, 232, 232);
+    background-color: rgb(232, 232, 232);
+    cursor: move;
+    opacity: 1;
+    user-select: none;
 }
 
-.postanim-dragging-card[data-dragged = "1"]{
+/* .postanim-dragging-card[data-dragged = "1"]{
     transform: scale(0);
 }
 
 .dragged{
     transform: scale(0);
-}
+} */
