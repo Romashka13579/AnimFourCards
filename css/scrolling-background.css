@@ -1,7 +1,25 @@
 .scrolling-background{
+    display: flex;
     width: 100%;
     height: 300vh;
     background: var(--background);
+    flex-direction: column;
+}
+
+.scrolling-background-pre{
+    width: 100%;
+    height: 20vh;
+    background: rgb(0,0,0);
+    transition: all 200ms;
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #409CD3 99%);
+}
+
+.scrolling-background-after{
+    width: 100%;
+    height: 20vh;
+    background: rgb(193,221,251);
+    background: linear-gradient(180deg, rgba(193,221,251,1) 0%, rgba(0,0,0,0) 99%);
+    transition: all 200ms;
 }
 
 .scrolling-background-main{
@@ -18,7 +36,7 @@
     height: 100vh;
     background: url(/images/skies/demo01_PixelSky_layer01.png) center/cover;
     transition: all 200ms;
-    opacity: 0;
+    /* opacity: 0; */
 }
 .scrolling-background-part:nth-child(2){background: url(/images/skies/demo01_PixelSky_layer02.png) center/cover;}
 .scrolling-background-part:nth-child(3){background: url(/images/skies/demo01_PixelSky_layer03.png) center/cover;}
