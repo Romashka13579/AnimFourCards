@@ -1,5 +1,4 @@
 var parts = document.querySelectorAll('.scrolling-background-part');
-var pre = document.querySelector('.scrolling-background-pre');
 
 let backTop = document.querySelector('.scrolling-background').offsetTop; // position of scrolling background in document = 7000+px
 let backheight = document.querySelector('.scrolling-background-main').getBoundingClientRect().height; // height of the block = 100vh
@@ -12,7 +11,7 @@ function Scroll() {
     const scrollTopPosition = document.documentElement.scrollTop;
     const difference = backTop - lastScrollTop;
 
-    if (lastScrollTop >= backTop) {
+    if (difference < 0) {
         for (let i = 0; i < parts.length; i++) {
 
             if (i < 3) { parts[i].style.opacity = `${(difference + backheight) / (2 * backheight) + 0.5}`; } // calculating position - last window position + height of the block and dividing it by height of the block to get value from 1 to 0
@@ -28,6 +27,12 @@ function Scroll() {
                 parts[4].style.top = `0px`;
                 parts[5].style.top = `0px`;
             }
+        }
+    }
+    else if(difference > 0){
+        for (let i = 0; i < parts.length; i++) {
+            if (i < 3) { parts[i].style.opacity = `1`; }
+            if (i >= 3) { parts[i].style.opacity = `0`; }
         }
     }
     lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
