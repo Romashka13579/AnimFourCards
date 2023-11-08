@@ -46,16 +46,12 @@
     height: 100vh;
     background: url(/images/skies/demo01_PixelSky_layer01.png) center/cover;
     transition: all 200ms;
-    /* opacity: 0; */
 }
 .scrolling-background-part:nth-child(2), .scrolling-background-part-2:nth-child(2){background: url(/images/skies/demo01_PixelSky_layer02.png) center/cover;}
 .scrolling-background-part:nth-child(3), .scrolling-background-part-2:nth-child(3){background: url(/images/skies/demo01_PixelSky_layer03.png) center/cover;}
 .scrolling-background-part:nth-child(4), .scrolling-background-part-2:nth-child(4){background: url(/images/skies/demo02_PixelSky_layer01.png) center/cover;}
 .scrolling-background-part:nth-child(5), .scrolling-background-part-2:nth-child(5){background: url(/images/skies/demo02_PixelSky_layer02.png) center/cover;}
 .scrolling-background-part:nth-child(6), .scrolling-background-part-2:nth-child(6){background: url(/images/skies/demo02_PixelSky_layer03.png) center/cover;}
-
-.scrolling-background-part-2:nth-child(n+4){opacity: 0;}
-
 
 .scrolling-background-text{
     color: rgb(255, 255, 255);

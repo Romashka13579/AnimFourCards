@@ -11,14 +11,14 @@ function Scroll() {
     const scrollTopPosition = document.documentElement.scrollTop;
     const difference = backTop2 - lastScrollTop2;
 
-    for (let i = 0; i < parts.length; i++) {
-        if(-difference >= backheight2*i/3){
-            if(i<2){parts2[0].style.opacity = `1`;parts2[i+1].style.top = `${backheight2}px`;parts2[parts2.length-1].style.opacity = `0`;}
-            else if(i==2){parts2[0].style.opacity = `0`;parts2[parts2.length-1].style.opacity = `1`;}
-            else if(i<5){parts2[i].style.top = `0px`;}
+    if(lastScrollTop2>=backTop2){
+        for (let i = 0; i < parts2.length; i++) {
+            if(i > 0 && i < parts2.length / 2){parts2[i].style.top = (Math.abs(difference) >  backheight2 * ( 1 - (i / 3))) ? `${backheight2+1}px` : `0px`;}
+            else if(i > parts2.length / 2 && i <= parts2.length - 1){parts2[i].style.top = (Math.abs(difference) <  backheight2 * i / 3) ? `${backheight2+1}px` : `0px`;}
+            else{parts2[i].style.opacity = (Math.abs(difference) > backheight2 * i / 3) ? `1` : `0`;}
         }
-        console.log(-difference);
     }
+    
     lastScrollTop2 = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
 }
 
