@@ -1,0 +1,16 @@
+.zooming-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+}
+
+.zooming-background-image{
+    position: absolute;
+    width: 68%;
+    height: 80%;
+    background: white;
+}
