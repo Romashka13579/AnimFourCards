@@ -12,14 +12,19 @@
     position: absolute;
     width: 68%;
     height: 80%;
-    background-position: center;
-    background-size: cover;
-    background-image: url(../images/sizing-background/chikago.jpg);
-    opacity: 1;
-    animation:test 6s infinite;
+    background: url(../images/sizing-background/chikago.jpg) center/cover;
+    background-size: 120%;
+    opacity: 0;
+    animation:test 20s infinite;
 }
 
 @keyframes test {
-    0%   {opacity: 1;}
-    100% {opacity: 0;}
+    10%   {opacity: 1;}
+    20%   {opacity: 1;}
+    30% {opacity: 0;}
 }
+
+.zooming-background-image:nth-child(2){background: url(../images/sizing-background/Dubai.jpg) center/cover; animation:test 20s 4s infinite;}
+.zooming-background-image:nth-child(3){background: url(../images/sizing-background/NewYork.jpg) center/cover; animation:test 20s 8s infinite;}
+.zooming-background-image:nth-child(4){background: url(../images/sizing-background/Tokyo.jpg) center/cover; animation:test 20s 12s infinite;}
+.zooming-background-image:nth-child(5){background: url(../images/sizing-background/Paris.jpg) center/cover; animation:test 20s 16s infinite;}
