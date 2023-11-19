@@ -1,0 +1,21 @@
+.mouse-following-bubbles{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+}
+
+.mouse-following-bubble{
+    position: absolute;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 50px;
+    background: white;
+    opacity: 0.8;
+    top: 0px;
+    left: 0px;
+}
