@@ -7,7 +7,7 @@
     height: 100vh;
     background: var(--background);
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 .mouse-following-bubble{
