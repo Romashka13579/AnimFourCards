@@ -7,9 +7,11 @@
     height: 100vh;
     background: var(--background);
     flex-direction: column;
+    overflow: hidden;
 }
 
 .mouse-following-bubble{
+    display: none;
     position: absolute;
     border-radius: 50%;
     aspect-ratio: 1;
@@ -18,4 +20,14 @@
     opacity: 0.8;
     top: 0px;
     left: 0px;
+    animation: disapearing forwards 2s;
+}
+
+.bubble-clone{
+    display: block;
+    color: rgb(255, 255, 255);
+}
+
+@keyframes disapearing {
+    100%{opacity: 0;transform: scale(0.2);}
 }
