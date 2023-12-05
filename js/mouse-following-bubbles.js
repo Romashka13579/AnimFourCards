@@ -5,9 +5,11 @@ mousefollowingbubbles.addEventListener('mousemove', (e) => {
     let x = e.clientX;
     let y = e.clientY;
     var clone = mousefollowingbubble.cloneNode(true);
-    clone.style.top = `${y + 15 - 130 * Math.random()}px`;
-    clone.style.left = `${x + 15 - 130 * Math.random()}px`;
     clone.style.background = `rgb(${255 * Math.random()}, ${255 * Math.random()}, ${255 * Math.random()})`;
+    clone.style.transform = `scale(${0.5 + 0.5 * Math.random()})`;
+    clone.style.top = `${y + 25 - 100 * Math.random()}px`;
+    clone.style.left = `${x + 25 - 100 * Math.random()}px`;
+    console.log(10 - 120 * Math.random());
     clone.classList += ' bubble-clone';
     mousefollowingbubbles.append(clone);
 
@@ -17,5 +19,5 @@ mousefollowingbubbles.addEventListener('mousemove', (e) => {
 function Clearing(element){
     setTimeout(() => {
         element.remove();
-    }, 3000);
+    }, 2000);
 }
