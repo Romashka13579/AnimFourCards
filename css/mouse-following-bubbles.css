@@ -20,7 +20,7 @@
     opacity: 0.8;
     top: 0px;
     left: 0px;
-    animation: disapearing forwards 2s;
+    animation: disapearing forwards 1.5s;
 }
 
 .bubble-clone{

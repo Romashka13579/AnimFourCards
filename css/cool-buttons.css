@@ -1,0 +1,28 @@
+.cool-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+}
+
+.next-button{
+    width: fit-content;
+    padding: 25px 35px;
+    display: flex;
+    gap: 20px;
+    background: rgb(34, 138, 152);
+    transform: skewX(-10deg);
+    box-shadow: 15px 15px 0px 0px rgb(8, 70, 78);
+}
+
+.next-button-text{
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 6px;
+    font-weight: 300;
+    transform: skewX(10deg);
+    color: white;
+}
