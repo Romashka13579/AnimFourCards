@@ -10,8 +10,9 @@
 
 .next-button{
     width: fit-content;
-    padding: 25px 35px;
+    padding: 20px 35px;
     display: flex;
+    flex-direction: row;
     gap: 20px;
     background: rgb(34, 138, 152);
     transform: skewX(-10deg);
@@ -25,4 +26,25 @@
     font-weight: 300;
     transform: skewX(10deg);
     color: white;
+}
+
+.next-button-arrows{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.next-button-arrow{
+    color: white;
+    font-size: 30px;
+    transition: 1s;
+}
+
+.next-button:hover > .next-button-arrows{
+    gap: 10px;
 }
