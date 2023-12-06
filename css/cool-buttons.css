@@ -1,4 +1,4 @@
-.cool-buttons{
+.cool-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.next-button{
+.next-button {
     width: fit-content;
     padding: 20px 35px;
     display: flex;
@@ -16,19 +16,39 @@
     gap: 20px;
     background: rgb(34, 138, 152);
     transform: skewX(-10deg);
-    box-shadow: 15px 15px 0px 0px rgb(8, 70, 78);
+    box-shadow: 9px 9px 0px 0px rgb(9, 80, 89);
+    transition: 600ms;
+    cursor: pointer;
 }
 
-.next-button-text{
+.next-button-line {
+    position: absolute;
+    background: rgb(246, 255, 82);;
+    width: 20%;
+    height: 9px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0;
+    transition: 0.5s;
+    animation: go-backward 2s alternate ease infinite;
+}
+
+.next-button-line:nth-child(2) {
+    left: 0px;
+    top: 0px;
+    animation: go-forward 2s alternate ease infinite;
+}
+
+.next-button-text {
     font-size: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 6px;
     font-weight: 300;
-    transform: skewX(10deg);
+    transform: skewX(5deg);
     color: white;
 }
 
-.next-button-arrows{
+.next-button-arrows {
     position: relative;
     width: fit-content;
     display: flex;
@@ -39,12 +59,67 @@
     overflow: hidden;
 }
 
-.next-button-arrow{
+.next-button-arrow {
     color: white;
-    font-size: 30px;
-    transition: 1s;
+    font-size: 38px;
+    transition: 600ms;
+    width: 30px;
+    animation: hovering 1s;
 }
 
-.next-button:hover > .next-button-arrows{
-    gap: 10px;
+.next-button-arrow:nth-child(1),
+.next-button-arrow:nth-child(2) {
+    width: 0px;
+}
+
+.next-button:hover > .next-button-arrows .next-button-arrow:nth-child(1) {
+    animation: hovering 1s 0.3s infinite;
+}
+
+.next-button:hover > .next-button-arrows .next-button-arrow:nth-child(2) {
+    animation: hovering 1s 0.6s infinite;
+}
+
+.next-button:hover > .next-button-arrows .next-button-arrow:nth-child(3) {
+    animation: hovering 1s 0.9s infinite;
+}
+
+.next-button:hover >.next-button-line:nth-child(1) {
+    opacity: 1;
+}
+
+.next-button:hover > .next-button-line:nth-child(2) {
+    opacity: 1;
+}
+
+.next-button:hover>.next-button-arrows .next-button-arrow:nth-child(1),
+.next-button:hover>.next-button-arrows .next-button-arrow:nth-child(2) {
+    width: 30px;
+}
+
+.next-button:hover {
+    box-shadow: 16px 16px 0px 0px rgb(7, 66, 74);
+    background: rgb(26, 165, 183);
+}
+
+@keyframes hovering {
+    25% {
+        color: rgb(246, 255, 82);
+    }
+
+    50% {
+        color: white;
+    }
+}
+
+@keyframes go-forward {
+    100%{
+        margin-left: 80%;
+    }
+}
+
+@keyframes go-backward {
+    100%{
+        margin-right: 80%;
+    }
 }
