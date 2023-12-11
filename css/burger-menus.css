@@ -15,9 +15,40 @@
 }
 
 .burger-menu{
-    width: 30%;
+    position: relative;
+    width: 35%;
     aspect-ratio: 1/1;
-    background: white;
+    background: rgb(240, 125, 17);
     margin: auto;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.burger-menu-1{
+    border-radius: 30%;
+    transition: border-radius 0.4s cubic-bezier(.64,-0.7,.64,1.01), background 0.5s;
+}
+
+.burger-menu-1:focus{
+    border-radius: 50%;
+    background: rgb(181, 87, 0);
+}
+
+.burger-menu-line{
+    position: absolute;
+    width: 70%;
+    height: 10%;
+    background: rgb(46, 46, 46);
+    border-radius: 100px;
+    transform: rotateZ(45deg);
+    transition: 0.5s cubic-bezier(.64,-0.7,.64,1.01);
+}
+
+.burger-menu-1 .burger-menu-line:nth-child(2){transform: rotateZ(135deg);}
+
+.burger-menu-1:focus .burger-menu-line:nth-child(1){transform: rotateZ(135deg) scale(0.8);}
+.burger-menu-1:focus .burger-menu-line:nth-child(2){transform: rotateZ(225deg) scale(0.8);}
+
+
+
