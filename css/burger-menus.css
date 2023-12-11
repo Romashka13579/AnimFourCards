@@ -1,0 +1,23 @@
+.burger-menus{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-menus-block{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    gap: 40px;
+    row-gap: 140px;
+}
+
+.burger-menu{
+    width: 30%;
+    aspect-ratio: 1/1;
+    background: white;
+    margin: auto;
+    border-radius: 50%;
+}
