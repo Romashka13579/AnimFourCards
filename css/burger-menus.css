@@ -18,37 +18,69 @@
     position: relative;
     width: 35%;
     aspect-ratio: 1/1;
-    background: rgb(240, 125, 17);
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.burger-menu-1{
-    border-radius: 30%;
-    transition: border-radius 0.4s cubic-bezier(.64,-0.7,.64,1.01), background 0.5s;
-}
-
-.burger-menu-1:focus{
     border-radius: 50%;
-    background: rgb(181, 87, 0);
+    transition: background 0.8s, box-shadow 0.8s;
 }
 
 .burger-menu-line{
     position: absolute;
     width: 70%;
     height: 10%;
-    background: rgb(46, 46, 46);
+    background: white;
     border-radius: 100px;
+    box-shadow: 0px 0px 3px 0px white;
     transform: rotateZ(45deg);
     transition: 0.5s cubic-bezier(.64,-0.7,.64,1.01);
 }
 
-.burger-menu-1 .burger-menu-line:nth-child(2){transform: rotateZ(135deg);}
+.burger-menu:focus{
+    background: rgb(30, 30, 30);
+    box-shadow: 0px 0px 20px 3px rgb(40, 40, 40);
+    transition: background 0.8s, box-shadow 0.4s;
+}
+
+.burger-menu .burger-menu-line:nth-child(2){transform: rotateZ(135deg);}
+
+.burger-menu-1:focus .burger-menu-line{
+    box-shadow: 0px 0px 7px 0px white;
+}
 
 .burger-menu-1:focus .burger-menu-line:nth-child(1){transform: rotateZ(135deg) scale(0.8);}
 .burger-menu-1:focus .burger-menu-line:nth-child(2){transform: rotateZ(225deg) scale(0.8);}
+
+.burger-menu-2 .burger-menu-line{transition: 0.5s;}
+
+.burger-menu-2 .burger-menu-line:nth-child(2){opacity: 0; transform: rotateZ(0deg);}
+
+.burger-menu-2 .burger-menu-line:nth-child(3){transform: rotateZ(135deg);}
+
+.burger-menu-2:focus .burger-menu-line:nth-child(1){transform: translateY(-20px) scale(0.8);}
+.burger-menu-2:focus .burger-menu-line:nth-child(3){transform: translateY(20px) scale(0.8) rotateZ(180deg);}
+
+.burger-menu-2:focus .burger-menu-line{
+    transform: rotateZ(0deg) scale(0.8);
+    opacity: 1;
+}
+
+.burger-menu-3:focus .burger-menu-line{
+    width: 50%;
+    transform: rotateZ(0deg);
+    animation: clock 8s 0.5s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes clock {
+ 0%{
+    transform: rotateZ(0deg);
+ }
+ 100%{
+    transform: rotateZ(360deg);
+ }
+}
 
 
 
