@@ -5,20 +5,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+}
+
+.item-over{
+    position: relative;
+    background: rgb(112, 112, 112);
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 2px;
+    box-sizing: border-box;
 }
 
 .item-card{
     position: relative;
     width: 300px;
     height: 400px;
-    background: grey;
+    background: rgb(43, 43, 43);
     overflow: hidden;
+    border-radius: 14px;
+    transition: 200ms;
 }
 
-.item-card-hover{
-    position: absolute;
-    height: 100%;
-    aspect-ratio: 1/1;
-    background: rgb(255,114,0);
-    background: radial-gradient(circle, rgba(255,114,0,0.6) 0%, rgba(255,255,255,0) 50%);
+.item-card:hover{
+    background: rgb(50, 50, 50);
 }
+
+.item-hover{
+    position: absolute;
+    height: 150%;
+    aspect-ratio: 1/1;
+}
+
+.hover-over-1{background: radial-gradient(circle, rgba(255,114,0,0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-1{background: radial-gradient(circle, rgba(255,114,0,0.1) 0%, rgba(255,255,255,0) 50%);}
+
+.hover-over-2{background: radial-gradient(circle, rgba(170, 0, 255,0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-2{background: radial-gradient(circle, rgba(170, 0, 255, 0.1) 0%, rgba(255,255,255,0) 50%);}
+
+.hover-over-3{background: radial-gradient(circle, rgba(57, 236, 3, 0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-3{background: radial-gradient(circle, rgba(57, 236, 3,0.1) 0%, rgba(255,255,255,0) 50%);}
