@@ -1,4 +1,4 @@
-var List = [document.querySelectorAll('.item-card'), document.querySelectorAll('.item-over')];
+var List = [document.querySelectorAll('.item-card'), document.querySelectorAll('.item-over'), document.querySelectorAll('.item-button-over'), document.querySelectorAll('.item-button')];
 
 window.addEventListener('mousemove', (e) => {
     List.forEach(itemlist => {
