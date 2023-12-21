@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    flex-direction: column;
 }
 
 .stretching-cards-block{
@@ -18,11 +18,12 @@
 }
 
 .stretching-card{
-    overflow: hidden;
+    position: relative;
     flex-grow: 1;
     background: white;
     transition: 300ms;
     filter: grayscale(0.7);
+    padding: 20px;
 }
 
 .stretching-cards-block:has(.stretching-card:hover) .stretching-card:not(:hover){
@@ -37,6 +38,6 @@
 .stretching-card:nth-child(1){background: url(/images/Flowers/Dahlia.jpg) center/cover;}
 .stretching-card:nth-child(2){background: url(/images/Flowers/Daisy.jpg) center/cover;}
 .stretching-card:nth-child(3){background: url(/images/Flowers/Lavander.jpg) center/cover;}
-.stretching-card:nth-child(4){background: url(/images/Flowers/Orchid.jpg) center/cover;}
+.stretching-card:nth-child(4){background: url(/images/Flowers/Orchid2.jpg) center/cover;}
 .stretching-card:nth-child(5){background: url(/images/Flowers/Roses.jpg) center/cover;}
 .stretching-card:nth-child(6){background: url(/images/Flowers/Tulip.jpg) center/cover;}
