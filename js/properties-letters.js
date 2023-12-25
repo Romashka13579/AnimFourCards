@@ -2,7 +2,6 @@ var LettersBlocks = document.querySelectorAll('.letters-block');
 
 LettersBlocks.forEach(block => {
     var letters = block.querySelector('.letters');
-    console.log(letters);
     var lettersArray = letters.dataset.text.split('');
     for (let i = 0; i < lettersArray.length; i++) {
         var newDiv = document.createElement("div");
@@ -15,10 +14,9 @@ LettersBlocks.forEach(block => {
                 break;
             case "Floating":
                 newDiv.classList.add('floating');
-                newDiv.style.animationDelay = `${(i * 4) / lettersArray.length}s`;
+                newDiv.style.animationDelay = `${(i * Math.random() * 2.5) / lettersArray.length}s`;
                 break;
         }
         letters.append(newDiv);
-        console.log("a");
     }
 });
