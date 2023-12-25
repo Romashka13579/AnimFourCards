@@ -16,6 +16,10 @@ LettersBlocks.forEach(block => {
                 newDiv.classList.add('floating');
                 newDiv.style.animationDelay = `${(i * Math.random() * 2.5) / lettersArray.length}s`;
                 break;
+            case "Scaling":
+                newDiv.classList.add('scaling');
+                newDiv.style.animationDelay = `${(i * 4) / lettersArray.length}s`;
+                break;
         }
         letters.append(newDiv);
     }

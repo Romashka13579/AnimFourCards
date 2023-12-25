@@ -18,8 +18,8 @@
 }
 
 .letters-block-2{background: rgb(170, 17, 17);}
-.letters-block-3{background: rgb(160, 18, 18);}
-.letters-block-4{background: rgb(160, 18, 18);}
+.letters-block-3{background: rgb(209, 215, 34);}
+.letters-block-4{background: rgb(34, 215, 73);}
 .letters-block-5{background: rgb(160, 18, 18);}
 .letters-block-6{background: rgb(160, 18, 18);}
 
@@ -77,5 +77,22 @@
     }
     100%{
         transform: translateY(5px) translateX(1px);
+    }
+}
+
+.scaling{
+    animation: scaling 4s infinite ease-in-out;
+    margin-top: auto;
+}
+
+@keyframes scaling {
+    0%{
+        font-size: 50px;
+    }
+    50%{
+        font-size: 80px;
+    }
+    100%{
+        font-size: 50px;
     }
 }
