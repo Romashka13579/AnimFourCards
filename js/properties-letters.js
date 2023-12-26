@@ -10,7 +10,7 @@ LettersBlocks.forEach(block => {
         switch (letters.dataset.text) {
             case "Jumping":
                 newDiv.classList.add('jumping');
-                newDiv.style.animationDelay = `${(i * 4) / lettersArray.length}s`;
+                newDiv.style.animationDelay = `${(i ) / lettersArray.length}s`;
                 break;
             case "Floating":
                 newDiv.classList.add('floating');
@@ -18,7 +18,7 @@ LettersBlocks.forEach(block => {
                 break;
             case "Scaling":
                 newDiv.classList.add('scaling');
-                newDiv.style.animationDelay = `${(i * 4) / lettersArray.length}s`;
+                newDiv.style.animationDelay = `${(i) / lettersArray.length}s`;
                 break;
             case "Twirlling":
                 newDiv.classList.add('twirlling');
