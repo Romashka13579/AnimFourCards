@@ -26,14 +26,14 @@
 }
 
 .stretching-color-over{
-    flex-grow: 1;
+    width: calc(100% *1/6);
     position: relative;
     overflow: hidden;
     transition: 2s;
 }
 
 .stretching-color{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -41,7 +41,7 @@
     align-items: center;
     min-width: 400%;
     height: 100%;
-    left: -300%;
+    right: 0%;
     transition:  all 2s ease-in-out;
     padding: 0% 100%;
     box-sizing: border-box;
@@ -71,12 +71,5 @@
 }
 
 .stretching-color-over:hover{
-    flex-grow: 4;
-}
-
-.stretching-color-over:hover .stretching-color{
-    min-width: 100%;
-    left: 0%;
-    padding: 0% 25%;
-    transition:  all 2s;
+    width: max-content;
 }
