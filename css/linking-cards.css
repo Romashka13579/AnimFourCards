@@ -1,0 +1,34 @@
+.liking-cards{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.liking-cards-block{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.liking-card{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: whitesmoke;
+    border-radius: 25px;
+}
+
+.liking-card-wave{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+}
