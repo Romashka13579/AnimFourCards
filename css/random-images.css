@@ -32,32 +32,25 @@
     right: 0px;
     animation: sliding 14s infinite linear;
     transform: translateX(50vw);
-    background: url(/images/random-images/julian-lozano-FMZxjmeZ95o-unsplash.jpg) center/cover;
 }
 
 .random-images-image:nth-child(2){
     animation-delay: 2s;
-    background: url(/images/random-images/kai-oberhauser-UnWYxJ_0WnM-unsplash.jpg) center/cover;
 }
 .random-images-image:nth-child(3){
     animation-delay: 4s;
-    background: url(/images/random-images/luuk-wouters-2rxgWHby5mo-unsplash.jpg) center/cover;
 }
 .random-images-image:nth-child(4){
     animation-delay: 6s;
-    background: url(/images/random-images/natalie-parham-fPKqpUbTL4Y-unsplash.jpg) center/cover;
 }
 .random-images-image:nth-child(5){
     animation-delay: 8s;
-    background: url(/images/random-images/sam-moghadam-khamseh-0gaYQpOMNpc-unsplash.jpg) center/cover;
 }
 .random-images-image:nth-child(6){
     animation-delay: 10s;
-    background: url(/images/random-images/tim-toomey-N__2iP37Z04-unsplash.jpg) center/cover;
 }
 .random-images-image:nth-child(7){
     animation-delay: 12s;
-    background: url(/images/random-images/vitor-fontes-UrhNlV9fKMw-unsplash.jpg) center/cover;
 }
 
 @keyframes sliding{
