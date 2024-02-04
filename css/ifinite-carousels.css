@@ -1,3 +1,14 @@
+:root{
+    --background: rgb(208, 215, 218);
+    --background-2: rgb(223, 230, 234);
+    --text: rgb(1, 14, 37);
+
+}
+
+.header{
+    color: var(--text);
+}
+
 .ifinite-background{
     position: relative;
     width: 100%;
@@ -8,6 +19,7 @@
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    background: var(--background-2);
 }
 
 .ifinite-background-sliders{
@@ -18,6 +30,7 @@
     gap: 20px;
     padding: 0px 10%;
     box-sizing: border-box;
+    transform-style: preserve-3d;
     transform: perspective(30vw) rotateZ(-4deg) rotateY(15deg) translateX(7%);
 }
 
@@ -78,6 +91,19 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    background: var(--background-2);
+    padding: 25px;
+}
+
+.infinite-slider-over:before{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--background-2) 0.01%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, var(--background-2) 99.9%);
+    z-index: 2;
 }
 
 .infinite-slider-block{
@@ -98,4 +124,48 @@
     100%{
         transform: translateX(-100%);
     }
+}
+
+.carousel{
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--background-2);
+}
+
+
+
+.carousel-over{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 10vh;
+    transform: perspective(600px) translateZ(300px);
+    transform-style: preserve-3d;
+}
+
+.carousel-item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transform: rotateY(0deg) translateZ(-300px);
+}
+
+.carousel-item:nth-child(1){
+    transform: rotateY(-20deg) translateZ(-300px) translateX(100%);
+    animation-delay: 3s;
+}
+
+.carousel-item:nth-child(3){
+    transform: rotateY(20deg) translateZ(-300px) translateX(-100%);
+    animation-delay: 6s;
 }
