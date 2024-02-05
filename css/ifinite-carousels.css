@@ -148,9 +148,9 @@
     justify-content: center;
     width: 30vw;
     aspect-ratio: 1.2/1;
-    transform: perspective(600px) translateZ(1900px);
+    transform: perspective(600px) translateY(-30px) translateZ(1900px) rotateZ(-4deg);
     transform-style: preserve-3d;
-    transition: 500ms cubic-bezier(.01,.58,.14,1.01);
+    transition: 600ms cubic-bezier(.15,.52,.18,.95);
 }
 
 .carousel-item{
@@ -159,24 +159,5 @@
     height: 100%;
     background: black;
     transform: rotateY(0deg) translateZ(-1900px);
-}
-
-.carousel-item:nth-child(1){
-    transform: rotateY(-12deg) translateZ(-1900px);
-    animation-delay: 3s;
-}
-
-.carousel-item:nth-child(3){
-    transform: rotateY(12deg) translateZ(-1900px);
-    animation-delay: 6s;
-}
-
-.carousel-item:nth-child(4){
-    transform: rotateY(24deg) translateZ(-1900px);
-    animation-delay: 6s;
-}
-
-.carousel-item:nth-child(5){
-    transform: rotateY(36deg) translateZ(-1900px);
-    animation-delay: 6s;
+    border-radius: 20px;
 }
