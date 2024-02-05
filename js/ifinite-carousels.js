@@ -12,7 +12,7 @@ for (let j = 0; j < 5; j++) {
 var carouselItems = document.querySelectorAll('.carousel-item');
 
 for (let i = 0; i < carouselItems.length; i++) {
-    carouselItems[i].style.transform = `rotateY(${12 * i}deg) translateZ(-180vw)`;
+    carouselItems[i].style.transform = `rotateY(${12 * i}deg) translateZ(-170vw)`;
 }
 
 var startDragging = false;
@@ -31,7 +31,7 @@ const dragging = (e) => {
     if (!startDragging) return;
     e.preventDefault();
     rotation = (position - parseInt(e.clientX)) / 14 + startRotation;
-    carouselOver.style.transform = `perspective(600px) translateZ(180vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
+    carouselOver.style.transform = `perspective(600px) translateZ(170vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
 }
 
 const dragover = (e) => {
@@ -43,7 +43,7 @@ const dragover = (e) => {
 const scroll = (e) => {
     e.preventDefault();
     scrolled = document.documentElement.scrollTop / 40;
-    carouselOver.style.transform = `perspective(600px) translateZ(180vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
+    carouselOver.style.transform = `perspective(600px) translateZ(170vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
 }
 
 carousel.addEventListener('mousemove', dragging);

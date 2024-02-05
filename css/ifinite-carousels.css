@@ -146,7 +146,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34vw;
+    width: 32vw;
     aspect-ratio: 1.4/1;
     transform: perspective(600px) translateY(-30px) translateZ(2150px) rotateZ(-7deg);
     transform-style: preserve-3d;
@@ -165,5 +165,19 @@
 .carousel-item:nth-child(6n-1){background: url(/images/web/game-design.jpeg) center/cover;}
 .carousel-item:nth-child(6n-2){background: url(/images/web/game\ background.jpg) center/cover;}
 .carousel-item:nth-child(6n-3){background: url(/images/web/game\ creating.jpg) center/cover;}
-.carousel-item:nth-child(6n-4){background: url(/images/web/logo-creating.webp) center/cover;}
+.carousel-item:nth-child(6n-4){background: url(/images/web/image.png) center/cover;}
 .carousel-item:nth-child(6n-5){background: url(/images/web/web\ design.webp) center/cover;}
+
+.carousel-block{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 90%;
+    right: 10%;
+    transform: rotate(none);
+}
+
+.carousel-header{
+
+}
