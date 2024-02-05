@@ -12,7 +12,7 @@ for (let j = 0; j < 5; j++) {
 var carouselItems = document.querySelectorAll('.carousel-item');
 
 for (let i = 0; i < carouselItems.length; i++) {
-    carouselItems[i].style.transform = `rotateY(${12 * i}deg) translateZ(-1900px)`;
+    carouselItems[i].style.transform = `rotateY(${12 * i}deg) translateZ(-180vw)`;
 }
 
 var startDragging = false;
@@ -31,22 +31,19 @@ const dragging = (e) => {
     if (!startDragging) return;
     e.preventDefault();
     rotation = (position - parseInt(e.clientX)) / 14 + startRotation;
-    carouselOver.style.transform = `perspective(600px) translateZ(1900px) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
-    console.log(rotation + scrolled);
+    carouselOver.style.transform = `perspective(600px) translateZ(180vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
 }
 
 const dragover = (e) => {
     e.preventDefault();
     startDragging = false;
     startRotation = rotation;
-    console.log(startRotation);
 }
 
 const scroll = (e) => {
     e.preventDefault();
-    scrolled = document.documentElement.scrollTop / 50;
-    carouselOver.style.transform = `perspective(600px) translateZ(1900px) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
-    console.log(rotation + scrolled);
+    scrolled = document.documentElement.scrollTop / 40;
+    carouselOver.style.transform = `perspective(600px) translateZ(180vw) translateY(-30px) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
 }
 
 carousel.addEventListener('mousemove', dragging);
@@ -54,3 +51,7 @@ carousel.addEventListener('mousedown', dragstart);
 carousel.addEventListener('mouseup', dragover);
 
 window.addEventListener('scroll', scroll);
+
+setTimeout(() => {
+    carouselOver.style.transition = "transform 600ms cubic-bezier(.15,.52,.18,.95)";
+}, 10);

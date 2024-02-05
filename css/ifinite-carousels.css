@@ -146,18 +146,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30vw;
-    aspect-ratio: 1.2/1;
-    transform: perspective(600px) translateY(-30px) translateZ(1900px) rotateZ(-4deg);
+    width: 34vw;
+    aspect-ratio: 1.4/1;
+    transform: perspective(600px) translateY(-30px) translateZ(2150px) rotateZ(-7deg);
     transform-style: preserve-3d;
-    transition: 600ms cubic-bezier(.15,.52,.18,.95);
 }
 
 .carousel-item{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: black;
-    transform: rotateY(0deg) translateZ(-1900px);
+    transform: rotateY(0deg) translateZ(-2150px);
     border-radius: 20px;
+    background: black;
 }
+
+.carousel-item:nth-child(6n){background: url(/images/web/3d-house-modeling.jpg) center/cover;}
+.carousel-item:nth-child(6n-1){background: url(/images/web/game-design.jpeg) center/cover;}
+.carousel-item:nth-child(6n-2){background: url(/images/web/game\ background.jpg) center/cover;}
+.carousel-item:nth-child(6n-3){background: url(/images/web/game\ creating.jpg) center/cover;}
+.carousel-item:nth-child(6n-4){background: url(/images/web/logo-creating.webp) center/cover;}
+.carousel-item:nth-child(6n-5){background: url(/images/web/web\ design.webp) center/cover;}
