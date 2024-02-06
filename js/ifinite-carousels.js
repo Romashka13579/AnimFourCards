@@ -30,12 +30,23 @@ const dragstart = (e) => {
     e.preventDefault();
     startDragging = true;
     position = parseInt(e.clientX);
+    const x = e.clientX - 50;
+    const y = e.pageY - carouselWrap.offsetTop - carousel.offsetTop - 50;
+    const keyframes = {
+        left: `${x}px`,
+        top: `${y}px`
+    }
+    hoverball.animate(keyframes, {
+        duration: 1500,
+        fill: "forwards"
+    });
 }
 
 const dragging = (e) => {
     if (!startDragging) {
-        const x = e.clientX -100;
-        const y = e.pageY - carouselWrap.offsetTop - carousel.offsetTop -100;
+        hoverball.style.transform = "scale(1)";
+        const x = e.clientX - 100;
+        const y = e.pageY - carouselWrap.offsetTop - carousel.offsetTop - 100;
         const keyframes = {
             left: `${x}px`,
             top: `${y}px`
@@ -49,6 +60,7 @@ const dragging = (e) => {
     e.preventDefault();
     rotation = (position - parseInt(e.clientX)) / 14 + startRotation;
     carouselOver.style.transform = `perspective(600px) translateZ(170vw) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
+    hoverball.style.transform = "scale(0)";
 }
 
 const dragover = (e) => {
@@ -63,23 +75,9 @@ const scroll = (e) => {
     carouselOver.style.transform = `perspective(600px) translateZ(170vw) rotateZ(-4deg) rotateY(${rotation + scrolled}deg)`;
 }
 
-// const mouseon = (e) => {
-//     e.preventDefault();
-//     console.log(e.target.boundingClientRect());
-// }
-
-const mouseon = (e) => {
-    e.preventDefault();
-    hoverball.style.display = "flex";
-    setTimeout(() => {
-        hoverball.style.opacity = 1;
-    }, 10);
-}
-
 carouselWrap.addEventListener('mousemove', dragging);
 carouselWrap.addEventListener('mousedown', dragstart);
 carouselWrap.addEventListener('mouseup', dragover);
-carouselWrap.addEventListener('mouseover', mouseon);
 // carouselItems.forEach(item => {
 //     item.addEventListener('mouseover', mouseon);
 // });
