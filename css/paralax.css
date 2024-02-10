@@ -1,12 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+
 .paralax{
     position: relative;
     width: 100%;
     max-height: 100vh;
     aspect-ratio: 1/1;
+
+}
+
+.paralax-header{
+    position: absolute;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0px;
+    width: 100%;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.paralax-logo{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    background: var(--background-2);
+}
+
+.paralax-logo-text{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Protest Riot', sans-serif;
+    color: aliceblue;
+    font-size: 38px; 
+}
+
+.paralax-logo-daisy{
+    position: absolute;
+    width:  73px;
+    aspect-ratio: 1/1;
+    background: url(/images/paralax/daisy.png) center/cover;
+    margin-left: -1px;
+}
+
+.paralax-logo-text span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    font-family: 'Protest Riot', sans-serif;
+    color: aliceblue;
+}
+
+.paralax-menu{
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+}
+
+.paralax-menu-item{
+    font-family: 'Protest Riot', sans-serif;
+    color: aliceblue;
+    font-size: 22px;
+    transition: 200ms;
+}
+
+.paralax-menu-item:hover{
+    color: rgb(255, 243, 150);
+}
+
+.paralax img{
+    width: 120vw;
+    height: 120vh;
+    height: auto;
+    transform: translateX(-10vw) translateY(-10vw);
+}
+
+.paralax-main{
+    width: 100vw;
+    height: 100vh;
 }
