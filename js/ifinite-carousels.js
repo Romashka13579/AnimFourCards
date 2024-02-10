@@ -45,8 +45,8 @@ const dragstart = (e) => {
 const dragging = (e) => {
     if (!startDragging) {
         hoverball.style.transform = "scale(1)";
-        const x = e.clientX - 100;
-        const y = e.pageY - carouselWrap.offsetTop - carousel.offsetTop - 100;
+        const x = e.clientX - 50;
+        const y = e.pageY - carouselWrap.offsetTop - carousel.offsetTop - 50;
         const keyframes = {
             left: `${x}px`,
             top: `${y}px`

@@ -13,14 +13,15 @@ const stop = (e) => {
     spin = false;
 }
 
-Spinning();
+Spinning()
 
 function Spinning(){
-    if(!spin) return;
-    rotation +=2;
-    cubeBase.style.transform = `perspective(500px) rotateY(${rotation}deg)`;
+    if(spin){
+        cubeBase.style.transform = `perspective(500px) rotateY(${rotation}deg)`;
+        rotation +=3;
+    }
  
-    requestAnimationFrame(Spinning());
+    requestAnimationFrame(Spinning);
 }
 
 cubeBase.addEventListener('mouseover', start);
