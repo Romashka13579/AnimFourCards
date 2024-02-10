@@ -71,14 +71,26 @@
     color: rgb(255, 243, 150);
 }
 
-.paralax img{
-    width: 120vw;
-    height: 120vh;
-    height: auto;
-    transform: translateX(-10vw) translateY(-10vw);
+.paralax-parts{
+    position: absolute;
+    width: 140vw;
+    transition: 3000ms cubic-bezier(0, 0.8, 0.2, 1);
+}
+
+.paralax-back{
+    left: -20vw;
+    top: -20vh;
+}
+
+.paralax-other{
+    left: -20vw;
+    bottom: -20vh;
 }
 
 .paralax-main{
+    position: relative;
     width: 100vw;
     height: 100vh;
+    max-height: 56,25vw;
+    overflow: hidden;
 }
