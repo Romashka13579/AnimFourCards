@@ -73,22 +73,54 @@
 
 .paralax-parts{
     position: absolute;
-    width: 140vw;
+    width: 4056px;
     transition: 3000ms cubic-bezier(0, 0.8, 0.2, 1);
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
 }
 
-.paralax-back{
-    left: -20vw;
-    top: -20vh;
+.paralax-layer8{
+    width: 3407px;
+    left: 42.5%;
+    top: 71%;
 }
 
-.paralax-other{
-    left: -20vw;
-    bottom: -20vh;
+.paralax-layer6{
+    width: 2898px;
+    left: 63.1%;
+    top: 68%;
+}
+
+.paralax-layer5{
+    width: 1410px;
+    left: 20%;
+    top: 58.8%;
+}
+
+.paralax-layer4{
+    width: 2221px;
+    left: 60.8%;
+    top: 86.6%;
+}
+
+.paralax-layer3{
+    width: 1146px;
+    left: 82.8%;
+    top: 71.2%;
+}
+
+.paralax-layer2{
+    width: 2132px;
+    left: 28%;
+    top: 76%;
 }
 
 .paralax-main{
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
     max-height: 56,25vw;
