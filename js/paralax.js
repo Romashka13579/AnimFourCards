@@ -15,6 +15,8 @@ function Start() {
 
 function Moving(object){
     window.addEventListener('mousemove', (e) => {
+        paralaxMain = document.querySelector('.paralax-main');
+        paralaxMainClient = paralaxMain.getBoundingClientRect();
         if(parseFloat(paralaxMainClient.height) < e.clientY) return;
         var x = (20 - e.clientX/paralaxMainClient.width * 40) * parseFloat(object.dataset.speed);
         var y = 5 - e.clientY/paralaxMainClient.height * 10;
