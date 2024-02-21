@@ -1,8 +1,8 @@
 var cubeBase = document.querySelector('.cube-3d-base');
 var requestAnimationFrame = window.requestAnimationFrame;
 
-rotation = 0;
-spin = false;
+var rotation = 0;
+var spin = false;
 
 
 const start = (e) => {
@@ -26,3 +26,17 @@ function Spinning(){
 
 cubeBase.addEventListener('mouseover', start);
 cubeBase.addEventListener('mouseout', stop);
+
+
+var numberBase = document.querySelector('.number-3d-base');
+
+var rotation1 = 0;
+
+Spinning2()
+
+function Spinning2(){
+    numberBase.style.transform = `perspective(500px) rotateY(${rotation1}deg)`;
+    rotation1 +=2;
+ 
+    requestAnimationFrame(Spinning2);
+}

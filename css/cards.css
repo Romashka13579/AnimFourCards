@@ -1,0 +1,491 @@
+.four-cards-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+}
+
+.four-cards{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.2s ease;
+}
+
+.card{
+    position: absolute;
+    border-radius: 25px;
+    transition: 1s all cubic-bezier(.32,.61,.15,1);
+    /* opacity: 0.9; */
+}
+
+.big-card{
+    width: 250px;
+    height: 350px;
+}
+
+.small-card{
+    width: 100px;
+    height: 140px;
+    transition: 0.8s all cubic-bezier(.32,.61,.15,1);
+}
+
+.four-cards:hover > .card:nth-child(1){
+    transform: translate(-70%, 35px) rotate(-10deg);
+}
+.four-cards:hover > .card:nth-child(3){
+    transform: translate(-35%, 8px) rotate(4deg);
+}
+.four-cards:hover > .card:nth-child(5){
+    transform: translate(10%) rotate(-5deg);
+}
+.four-cards:hover > .card:nth-child(8){
+    transform: translate(50%, 40px) rotate(17deg);
+}
+.card:nth-child(1){background: var(--big-card-1);}
+.card:nth-child(3){background: var(--big-card-2);}
+.card:nth-child(5){background: var(--big-card-3);}
+.card:nth-child(8){background: var(--big-card-4);}
+
+.four-cards:hover > .card:nth-child(2){
+    transform: translate(-300%, -85%) rotate(15deg);
+}
+.four-cards:hover > .card:nth-child(4){
+    transform: translate(-190%, 130%) rotate(-21deg);
+}
+.four-cards:hover > .card:nth-child(6){
+    transform: translate(140%, -130%) rotate(-20deg);
+}
+.four-cards:hover > .card:nth-child(7){
+    transform: translate(240%, 120%) rotate(35deg);
+}
+
+.card:nth-child(2){background: var(--small-card-1);}
+.card:nth-child(4){background: var(--small-card-2);}
+.card:nth-child(6){background: var(--small-card-3);}
+.card:nth-child(7){background: var(--small-card-4);}
+
+.buttons{
+    position: absolute;
+    margin-top: 460px;
+    display: flex;
+    gap: 16px;
+}
+
+button{
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px 2px;
+    transition: all 0.5s ease;
+}
+
+.button:nth-child(1){
+    transform: rotate(180deg);
+}
+
+.four-cards[data-status="pre-before"]{
+    transform: translate(500px);
+    opacity: 0;
+    scale: 0;
+    transition: none;
+}
+
+.four-cards[data-status="before"]{
+    transform: translate(500px);
+    opacity: 0;
+    scale: 0;
+}
+
+.four-cards[data-status="pre-after"]{
+    transform: translate(-500px);
+    opacity: 0;
+    scale: 0;
+    transition: none;
+}
+
+.four-cards[data-status="after"]{
+    transform: translate(-500px);
+    opacity: 0;
+    scale: 0;
+}
+
+.four-cards[data-status="active"]{
+    transform: translate(0px);
+    opacity: 1;
+    scale: 1;
+}
+
+button:hover{
+    color: var(--button);
+}
+
+button:focus{
+    color: var(--button-focused);
+}
+
+
+
+
+
+
+.dog-flipping-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dog-flipping-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.dog-flipping-sandwich{
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1/1;
+    transition: 500ms all;
+    transform-style: preserve-3d;
+}
+
+.dog-flipping-card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    transform: translateZ(2px);
+    box-sizing: border-box;
+    transition: 500ms all;
+}
+
+.dog-flipping-card::before {
+    position: absolute;
+    border-radius: inherit;
+    content: "";
+    display: block;
+    inset: 0rem;
+    filter: grayscale(80%);
+    transition: 500ms all;
+    transform: translateZ(10px);
+  }
+
+.dog-flipping-sandwich:nth-child(1) .dog-flipping-card::before{background: url(/images/dogs/ash-v0_MCllHY9M-unsplash.jpg) center/cover;}
+.dog-flipping-sandwich:nth-child(2) .dog-flipping-card::before{background: url(/images/dogs/ralu-gal-G8cB8hY3yvU-unsplash.jpg) center/cover;}
+.dog-flipping-sandwich:nth-child(3) .dog-flipping-card::before{background: url(/images/dogs/richard-brutyo-Sg3XwuEpybU-unsplash.jpg) center/cover;}
+
+.dog-flipping-overline{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border: 2px solid var(--text-dogs-flipping);
+}
+
+.dog-flipping-text{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    bottom: -20px;
+    gap: 10px;
+    transition: 500ms all;
+}
+
+.dog-flipping-name{
+    color: var(--text-dogs-flipping);
+    font-size: 24px;
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dog-flipping-back .dog-flipping-name{
+    color: var(--text-dogs-flipping-2);
+}
+
+.dog-flipping-line{
+    width: 100px;
+    height: 2px;
+    background: var(--text-dogs-flipping);
+    opacity: 0;
+    transition: 500ms all;
+}
+
+.dog-flipping-back .dog-flipping-line{
+    background: var(--text-dogs-flipping-2);
+}
+
+.dog-flipping-hidden{
+    opacity: 0;
+    color: var(--text-dogs-flipping);
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 500ms all;
+}
+
+.dog-flipping-back .dog-flipping-hidden{
+    color: var(--text-dogs-flipping-2);
+}
+
+.dog-flipping-sandwich:hover .dog-flipping-line{opacity: 1; width: 150px;}
+.dog-flipping-sandwich:hover .dog-flipping-hidden{opacity: 1;}
+.dog-flipping-sandwich:hover .dog-flipping-text{bottom: 20px;}
+.dog-flipping-sandwich:hover{scale: 1.05;}
+.dog-flipping-sandwich:hover .dog-flipping-card::before{filter: grayscale(80%) brightness(0.4);}
+
+.dog-flipping-card[data-flipped = "1"]{
+    scale: 1.05;
+}
+
+.dog-flipping-back{
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgb(212, 212, 212);
+    padding: 20px;
+    box-sizing: border-box;
+    transform: rotateZ(180deg) rotateY(180deg);
+}
+
+.dog-back-header{
+    font-size: 24px;
+    font-weight: 900;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-dogs-flipping-2);
+}
+
+.dog-back-line{
+    width: 100%;
+    height: 2.8px;
+    background: var(--text-dogs-flipping-2);
+}
+
+.dog-back-text{
+    font-size: 16px;
+    font-weight: 300;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text-dogs-flipping-2);
+}
+
+.dog-back-buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.dog-back-button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(232, 232, 232);
+    border: 1.2px solid var(--text-dogs-flipping-2);
+    text-decoration: none;
+    color: var(--text-dogs-flipping-2);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+
+
+
+
+.item{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.item-over{
+    position: relative;
+    background: rgb(112, 112, 112);
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.item-card{
+    position: relative;
+    display: flex;
+    padding: 40px;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 300px;
+    height: 400px;
+    background: rgb(51, 51, 51);
+    overflow: hidden;
+    border-radius: 14px;
+    transition: 200ms;
+}
+
+.item-text{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.item-title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: white;
+}
+
+.item-description{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+}
+.item-description ul{padding-left: 20px;}
+.item-description ul li {
+    margin-bottom: 8px;
+}
+
+.item-buttons{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.item-button-over{
+    position: relative;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 1.6px;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.item-buttons .item-button-over:nth-child(2){
+    flex-grow: 10;
+}
+
+.item-button{
+    position: relative;
+    width: 100%;
+    background: rgb(24, 24, 24);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item-button-text{
+    position:relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+    margin: 8px 10px;
+    z-index: 2;
+}
+
+.item-card:hover{
+    background: rgb(61, 61, 61);
+}
+
+.item-hover{
+    position: absolute;
+    width: 600px;
+    aspect-ratio: 1/1;
+}
+
+.hover-over-1{background: radial-gradient(circle, rgba(255,114,0,0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-1{background: radial-gradient(circle, rgba(255,114,0,0.15) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-1{background: radial-gradient(circle, rgba(255,114,0,0.45) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-over-1{background: radial-gradient(circle, rgba(255,114,0,0.65) 0%, rgba(255,255,255,0) 50%);}
+.item-buttons .item-button-over:nth-child(2) .hover-button{background: radial-gradient(circle, rgba(255, 0, 0, 0.55) 0%, rgba(255,255,255,0) 50%);}
+.item-buttons .item-button-over:nth-child(2) .hover-button-over{background: radial-gradient(circle, rgba(255, 0, 0, 0.80) 0%, rgba(255,255,255,0) 50%);}
+
+.hover-over-2{background: radial-gradient(circle, rgba(170, 0, 255,0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-2{background: radial-gradient(circle, rgba(170, 0, 255, 0.15) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-2{background: radial-gradient(circle, rgba(170, 0, 255, 0.45) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-over-2{background: radial-gradient(circle, rgba(170, 0, 255, 0.65) 0%, rgba(255,255,255,0) 50%);}
+
+.hover-over-3{background: radial-gradient(circle, rgba(57, 236, 3, 0.8) 0%, rgba(255,255,255,0) 50%);}
+.hover-card-3{background: radial-gradient(circle, rgba(57, 236, 3,0.15) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-3{background: radial-gradient(circle, rgba(57, 236, 3,0.45) 0%, rgba(255,255,255,0) 50%);}
+.hover-button-over-3{background: radial-gradient(circle, rgba(57, 236, 3,0.65) 0%, rgba(255,255,255,0) 50%);}
+
+
+
+
+
+.stretching-cards{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stretching-cards-block{
+    width: 95%;
+    aspect-ratio: 1/0.3;
+    background: rgb(29, 29, 29);
+    display: flex;
+    /* padding: 5px;
+    gap: 5px; */
+}
+
+.stretching-card{
+    position: relative;
+    flex-grow: 1;
+    background: white;
+    transition: 300ms;
+    filter: grayscale(0.7);
+    padding: 20px;
+}
+
+.stretching-cards-block:has(.stretching-card:hover) .stretching-card:not(:hover){
+    filter: grayscale(0.9) brightness(0.7);
+}
+
+.stretching-card:hover{
+    flex-grow: 3.5;
+    filter: grayscale(0);
+}
+
+.stretching-card:nth-child(1){background: url(/images/Flowers/Dahlia.jpg) center/cover;}
+.stretching-card:nth-child(2){background: url(/images/Flowers/Daisy.jpg) center/cover;}
+.stretching-card:nth-child(3){background: url(/images/Flowers/Lavander.jpg) center/cover;}
+.stretching-card:nth-child(4){background: url(/images/Flowers/Orchid2.jpg) center/cover;}
+.stretching-card:nth-child(5){background: url(/images/Flowers/Roses.jpg) center/cover;}
+.stretching-card:nth-child(6){background: url(/images/Flowers/Tulip.jpg) center/cover;}

@@ -21,7 +21,7 @@
     background: var(--background-2);
 }
 
-.triangle-3d-base,
+.number-3d-base,
 .cube-3d-base{
     position: relative;
     display: flex;
@@ -31,7 +31,7 @@
     transform-style: preserve-3d;
 }
 
-.triangle-3d-face,
+.number-3d-face,
 .cube-3d-face{
     position: absolute;
     width: 100%;
@@ -40,6 +40,22 @@
     /* border-radius: 10px; */
     border: 2px solid black;
 }
+
+.number-3d-face{
+    width: 60%;
+}
+
+.number-3d-face:nth-child(5), .number-3d-face:nth-child(6){
+    width: 60%;
+    height: 60%;
+}
+
+.number-3d-face:nth-child(1){transform: translateZ(-4.2vw); background: red;}
+.number-3d-face:nth-child(2){transform: translateZ(4.2vw); background: blue;}
+.number-3d-face:nth-child(3){transform: translateX(-4.2vw) rotateY(-90deg); background: orange;}
+.number-3d-face:nth-child(4){transform: translateX(4.2vw) rotateY(-90deg); background: yellow;}
+.number-3d-face:nth-child(5){transform: translateY(-7vw) rotateX(-90deg); background: purple;}
+.number-3d-face:nth-child(6){transform: translateY(7vw) rotateX(-90deg); background: green;}
 
 .cube-3d-face:nth-child(1){transform: translateZ(-7vw); background: red;}
 .cube-3d-face:nth-child(2){transform: translateZ(7vw); background: blue;}
