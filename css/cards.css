@@ -46,10 +46,10 @@
 .four-cards:hover > .card:nth-child(8){
     transform: translate(50%, 40px) rotate(17deg);
 }
-.card:nth-child(1){background: var(--big-card-1);}
-.card:nth-child(3){background: var(--big-card-2);}
-.card:nth-child(5){background: var(--big-card-3);}
-.card:nth-child(8){background: var(--big-card-4);}
+.card:nth-child(1){background: url(/images/Cards/spongebob.webp) center/cover;}
+.card:nth-child(3){background: url(/images/Cards/futurama.jpg) center/cover;}
+.card:nth-child(5){background: url(/images/Cards/rik_and_morty.jpg) center/cover;}
+.card:nth-child(8){background: url(/images/Cards/Simpsons_FamilyPicture.png) center/cover;}
 
 .four-cards:hover > .card:nth-child(2){
     transform: translate(-300%, -85%) rotate(15deg);
@@ -64,10 +64,10 @@
     transform: translate(240%, 120%) rotate(35deg);
 }
 
-.card:nth-child(2){background: var(--small-card-1);}
-.card:nth-child(4){background: var(--small-card-2);}
-.card:nth-child(6){background: var(--small-card-3);}
-.card:nth-child(7){background: var(--small-card-4);}
+.card:nth-child(2){background: url(/images/Cards/sponge.webp) center/cover;}
+.card:nth-child(4){background: url(/images/Cards/bender.webp) center/cover;}
+.card:nth-child(6){background: url(/images/Cards/rik.png) center/cover;}
+.card:nth-child(7){background: url(/images/Cards/homer.webp) center/cover;}
 
 .buttons{
     position: absolute;
