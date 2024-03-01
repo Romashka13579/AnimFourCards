@@ -1,3 +1,38 @@
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    background-color: rgb(255 255 255 / 0%);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-logo{
+    width: 100px;
+    height: 60px;
+    background: white;
+}
+
+.navbar-links{
+    display: flex;
+    gap: 14px;
+    flex-direction: row;
+}
+
+.navbar-link{
+    font-family: "Varela Round", sans-serif;
+    color: aliceblue;
+    font-size: 19px;
+    transition: 200ms;
+    margin: auto;
+    text-decoration: none;
+}
+
 .main-parallax{
     position: relative;
     width: 100%;
@@ -17,13 +52,98 @@
     transition: margin-top 1000ms, transform 3000ms cubic-bezier(0, 0.8, 0.2, 1);
 }
 
+.main-parallax-text{
+    width: auto;
+    top: 66%;
+    font-family: "Anton", sans-serif;
+    color: white;
+    font-size: 12vw;
+}
+
 .main-parallax-back{
     margin-top: 10vh;
 }
 
 .main-parallax-gradient{
     position: absolute;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 90%, rgb(30, 29, 29) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 90%, var(--background) 100%);
     width: 100%;
     height: 100%;
+}
+
+
+
+
+.about-me{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 200px;
+    box-sizing: border-box;
+}
+
+.about-me-box{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 50px;
+}
+
+.about-me-text{
+    display: flex;
+    gap: 30px;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    flex-direction: column;
+}
+
+.about-me-header{font-size: 56px; font-weight: 600;}
+.about-me-description{font-size: 23px;}
+
+.about-me-image-box{
+    position: relative;
+    display: flex;
+    width: calc(22vw + 18px);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    aspect-ratio: 1/1.05;
+    transition: 0.8s;
+}
+
+.about-me-image{
+    width: 22vw;
+    border-radius: 50%;
+    aspect-ratio: 1/1.05;
+    z-index: 2;
+}
+
+.about-me-border{
+    position: absolute;
+    background: #ed5b5c;
+    width: 120%;
+    height: 50%;
+    animation: spinning 2.3s infinite linear;
+    transition: 400ms;
+}
+
+.about-me-image-box:hover .about-me-border{
+    opacity:0;
+}
+
+.about-me-image-box:hover{
+    box-shadow: 0px 0px 20px 15px #ed5b5b3d;
+}
+
+@keyframes spinning {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
 }
