@@ -7,6 +7,9 @@ var y2 = 0;
 var x1 = 0;
 var x = 0;
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
 
 Start();
 
@@ -38,5 +41,28 @@ function Moving(object){
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         object.style.marginTop = `-20vh`;
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
+    });
+}
+
+
+
+var animationTexts = document.querySelectorAll('.text-anim');
+
+window.addEventListener('scroll', Scrolling);
+
+Scrolling();
+
+function Scrolling() {
+    animationTexts.forEach(item => {
+        var trigger = window.innerHeight;
+        var properties = item.getBoundingClientRect();
+        var trigger2 = properties.top + properties.height/2;
+        console.log(trigger);
+        console.log(trigger2);
+        if (trigger2 < trigger) {
+            item.querySelectorAll('.text-anim-child').forEach(item2 => {
+                item2.classList.add('show');
+            });
+        }
     });
 }

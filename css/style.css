@@ -22,12 +22,12 @@
 body{
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 .the-animations{
     width: 100%;
     background: var(--background);
-
 }
 
 .header{
