@@ -54,10 +54,11 @@
 
 .main-parallax-text {
     width: auto;
-    top: 66%;
+    top: 64%;
     font-family: "Anton", sans-serif;
     color: white;
     font-size: 12vw;
+    text-shadow: 0 0 10px rgb(163 145 145);
 }
 
 .main-parallax-back {
@@ -166,19 +167,122 @@
     aspect-ratio: 1/0.6;
     background: #0c0b0e;
     border-radius: 8px;
-}
-
-.projects-card:nth-child(2){
-    margin-top: calc(-10%);
-    margin-left: calc(-10%);
-}
-
-.projects-card:nth-child(3){
-    margin-top: calc(-20%);
-    margin-left: calc(-20%);
+    /* border: 4px solid #0c0b0e;
+    box-sizing: border-box; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: transform 300ms;
+    pointer-events: none;
 }
 
 .projects-card:nth-child(4){
-    margin-top: calc(-30%);
-    margin-left: calc(-30%);
+    pointer-events: all;
 }
+
+.projects-card:nth-child(3){
+    margin-top: calc(-6%);
+    margin-left: calc(-10%);
+    opacity: 0.8;
+}
+
+.projects-card:nth-child(2){
+    margin-top: calc(-12%);
+    margin-left: calc(-20%);
+    opacity: 0.6;
+}
+
+.projects-card:nth-child(1){
+    margin-top: calc(-18%);
+    margin-left: calc(-30%);
+    opacity: 0.4;
+}
+
+.projects-card-image{
+    width: 100%;
+    height: 100%;
+    background: url(/images/projects/cybersoft.png) center/cover;
+}
+
+.projects-card:hover .projects-card-content{
+    opacity: 1;
+}
+
+.projects-card-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0c0b0ec2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.projects-card-header{
+    font-size: 60px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+.projects-card-types{
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    align-items: center;
+}
+
+.projects-card-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.projects-card-type{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.projects-card-links{
+    position: absolute;
+    bottom: 0px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+.projects-card-right{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #0c0b0e;
+    right: -35px;
+    opacity: 0.6;
+    transition: all 200ms;
+}
+
+.projects-card-right:hover{
+    opacity: 0.75;
+    width: 120px;
+    height: 120px;
+    box-shadow: 0px 0px 0px 10px #0c0b0e81,
+    0px 0px 0px 20px #0c0b0e2b;
+}
+
+.projects-card-hovered{
+    transform: rotateZ(15deg) translateY(-15%);
+}
+
+.projects-card-clicked{
+    transform: rotateZ(30deg) translateY(-30%);
+}
+

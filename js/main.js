@@ -54,11 +54,11 @@ Scrolling();
 
 function Scrolling() {
     animationTexts.forEach(item => {
+
         var trigger = window.innerHeight;
         var properties = item.getBoundingClientRect();
         var trigger2 = properties.top + properties.height/2;
-        console.log(trigger);
-        console.log(trigger2);
+
         if (trigger2 < trigger) {
             item.querySelectorAll('.text-anim-child').forEach(item2 => {
                 item2.classList.add('show');
@@ -66,3 +66,20 @@ function Scrolling() {
         }
     });
 }
+
+
+
+var projectsCard = document.querySelectorAll('.projects-card');
+
+projectsCard.forEach(card => {
+    var button = card.querySelector('.projects-card-right');
+    button.addEventListener('mouseover', () => {
+        card.classList.add('projects-card-hovered');
+    }); 
+    button.addEventListener('mouseout', () => {
+        card.classList.remove('projects-card-hovered');
+    }); 
+    button.addEventListener('click', () => {
+        card.classList.add('projects-card-clicked');
+    }); 
+});
