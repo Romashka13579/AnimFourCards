@@ -58,7 +58,7 @@
     font-family: "Anton", sans-serif;
     color: white;
     font-size: 12vw;
-    text-shadow: 0 0 10px rgb(163 145 145);
+    text-shadow: 0 0 8px rgb(163 145 145);
 }
 
 .main-parallax-back {
@@ -159,6 +159,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transform-style: preserve-3d;
 }
 
 .projects-card{
@@ -174,6 +175,7 @@
     flex-direction: row;
     transition: transform 300ms;
     pointer-events: none;
+    transform: perspective(600px);
 }
 
 .projects-card:nth-child(4){
@@ -181,20 +183,17 @@
 }
 
 .projects-card:nth-child(3){
-    margin-top: calc(-6%);
-    margin-left: calc(-10%);
+    transform: perspective(600px) translateX(-10%) translateY(-10%) translateZ(-10px);
     opacity: 0.8;
 }
 
 .projects-card:nth-child(2){
-    margin-top: calc(-12%);
-    margin-left: calc(-20%);
+    transform: perspective(600px) translateX(-20%) translateY(-20%) translateZ(-20px);
     opacity: 0.6;
 }
 
 .projects-card:nth-child(1){
-    margin-top: calc(-18%);
-    margin-left: calc(-30%);
+    transform: perspective(600px) translateX(-30%) translateY(-30%) translateZ(-30px);
     opacity: 0.4;
 }
 
@@ -261,28 +260,45 @@
 
 .projects-card-right{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: #0c0b0e;
+    background: #0c0b0e8a;
     right: -35px;
-    opacity: 0.6;
     transition: all 200ms;
 }
 
 .projects-card-right:hover{
-    opacity: 0.75;
     width: 120px;
     height: 120px;
+    font-size: 50px;
+    background: #0c0b0ec1;
     box-shadow: 0px 0px 0px 10px #0c0b0e81,
     0px 0px 0px 20px #0c0b0e2b;
 }
 
 .projects-card-hovered{
-    transform: rotateZ(15deg) translateY(-15%);
+    transform: perspective(600px) rotateZ(10deg) translateY(-10%);
 }
 
 .projects-card-clicked{
-    transform: rotateZ(30deg) translateY(-30%);
+    animation: goingback forwards 800ms ease;
+}
+
+@keyframes goingback {
+    0%{
+        transform: perspective(600px) rotateZ(10deg) translateY(-10%);
+    }
+    50%{
+        transform: perspective(600px) rotateZ(40deg) translateY(-120%) translateZ(-10px) translateX(30%);
+    }
+    100%{
+        transform: perspective(600px) rotateZ(0deg) translateY(-30%) translateZ(-100px) translateX(-30%);
+    }
 }
 
