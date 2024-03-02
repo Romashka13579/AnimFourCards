@@ -46,7 +46,7 @@ function Moving(object){
 
 
 
-var animationTexts = document.querySelectorAll('.text-anim');
+var animationTexts = document.querySelectorAll('.animated');
 
 window.addEventListener('scroll', Scrolling);
 
@@ -60,8 +60,8 @@ function Scrolling() {
         var trigger2 = properties.top + properties.height/2;
 
         if (trigger2 < trigger) {
-            item.querySelectorAll('.text-anim-child').forEach(item2 => {
-                item2.classList.add('show');
+            item.querySelectorAll('.animation-child').forEach(child => {
+                child.classList.add(`${child.dataset.animation}`);
             });
         }
     });

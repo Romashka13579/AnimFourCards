@@ -104,7 +104,7 @@
 .about-me-header {font-size: 56px;font-weight: 600;transition: all 400ms;}
 .about-me-description {font-size: 23px;transition: all 700ms;}
 
-.text-anim-child{
+.animation-child{
     opacity: 0;
     transform: translateY(50%);
 }
@@ -168,33 +168,38 @@
     aspect-ratio: 1/0.6;
     background: #0c0b0e;
     border-radius: 8px;
-    /* border: 4px solid #0c0b0e;
-    box-sizing: border-box; */
     overflow: hidden;
     display: flex;
     flex-direction: row;
     transition: transform 300ms;
     pointer-events: none;
     transform: perspective(600px);
+    transition: transform 500ms;
+    transform: perspective(600px) translateX(-100vw) translateY(0%) translateZ(0px);
 }
 
-.projects-card:nth-child(4){
+.show-card:nth-child(1){
     pointer-events: all;
+    transform: perspective(600px) translateX(0%) translateY(0%) translateZ(0px);
+    opacity: 1;
 }
 
-.projects-card:nth-child(3){
+.show-card:nth-child(2){
     transform: perspective(600px) translateX(-10%) translateY(-10%) translateZ(-10px);
     opacity: 0.8;
+    transition-delay: 100ms;
 }
 
-.projects-card:nth-child(2){
+.show-card:nth-child(3){
     transform: perspective(600px) translateX(-20%) translateY(-20%) translateZ(-20px);
     opacity: 0.6;
+    transition-delay: 200ms;
 }
 
-.projects-card:nth-child(1){
+.show-card:nth-child(4){
     transform: perspective(600px) translateX(-30%) translateY(-30%) translateZ(-30px);
     opacity: 0.4;
+    transition-delay: 300ms;
 }
 
 .projects-card-image{
