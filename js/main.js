@@ -84,13 +84,18 @@ projectsCard.forEach(card => {
         projectsCard.forEach(card2 => {
             card2.dataset.position = `${parseInt(card2.dataset.position) - 1}`;
             card.dataset.position = "3";
-            card2.style.pointerEvents = "none";
             card2.style.transform = `perspective(600px) translateX(-${parseInt(card2.dataset.position)*10}%) translateY(-${parseInt(card2.dataset.position)*10}%) translateZ(-${parseInt(card2.dataset.position)*10}px)`;
             card2.style.opacity = `${1/(parseInt(card2.dataset.position) + 1)}`;
-            if(card2.dataset.position == "0"){
-                card2.style.pointerEvents = "all";
-            }
+            card2.style.transitionDelay = `${parseInt(card2.dataset.position)*100}ms`;
+            // card2.style.pointerEvents = "none";
+            // if(card2.dataset.position == "0"){
+            //     setTimeout(() => {
+            //         card2.style.pointerEvents = "all";
+            //     }, 800);
+            // }
         });
 
     }); 
 });
+
+document.documentElement.style.setProperty(`--variable`, `${10}`);
