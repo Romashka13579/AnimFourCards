@@ -104,7 +104,7 @@
 .about-me-header {font-size: 56px;font-weight: 600;transition: all 400ms;}
 .about-me-description {font-size: 23px;transition: all 700ms;}
 
-.animation-child{
+.about-me-header, .about-me-description{
     opacity: 0;
     transform: translateY(50%);
 }
@@ -287,8 +287,8 @@
     0px 0px 0px 20px #0c0b0e2b;
 }
 
-.projects-card-hovered{
-    transform: perspective(600px) rotateZ(10deg) translateY(-10%);
+.projects-card-hovered:nth-child(1){
+    transform: perspective(600px) rotateZ(10deg) translateY(-10%) translateX(0%) translateZ(0px);
 }
 
 .projects-card-clicked{
