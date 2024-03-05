@@ -188,28 +188,25 @@
     transform: perspective(600px) translateX(-100vw) translateY(0%) translateZ(0px);
 }
 
-[data-position="0"] {
+.projects-card[data-position="0"]{
     pointer-events: all;
-}
-
-.show-card[data-position="0"]{
     transform: perspective(600px) translateX(0%) translateY(0%) translateZ(0px);
     opacity: 1;
 }
 
-.show-card[data-position="1"]{
+.projects-card[data-position="1"]{
     transform: perspective(600px) translateX(-10%) translateY(-10%) translateZ(-10px);
     opacity: 0.8;
     transition-delay: 100ms;
 }
 
-.show-card[data-position="2"]{
+.projects-card[data-position="2"]{
     transform: perspective(600px) translateX(-20%) translateY(-20%) translateZ(-20px);
     opacity: 0.6;
     transition-delay: 200ms;
 }
 
-.show-card[data-position="3"]{
+.projects-card[data-position="3"]{
     transform: perspective(600px) translateX(-30%) translateY(-30%) translateZ(-30px);
     opacity: 0.4;
     transition-delay: 300ms;

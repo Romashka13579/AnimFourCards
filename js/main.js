@@ -62,6 +62,7 @@ function Scrolling() {
         if (trigger2 < trigger) {
             if(item.dataset.animation == "card"){
                 CardAnimation(item);
+                console.log("good");
             }
             else{
                 item.querySelectorAll('.animation-child').forEach(child => {
@@ -79,9 +80,10 @@ function TextAnimation(object) {
     object.classList.add(`${object.dataset.animation}`);
 }
 
-function CardAnimation(object) {  
-    for (let i = 0; i < object.length; i++) {
-        object[i].dataset.position = `${i}`;
+function CardAnimation(object) { 
+    var children = object.querySelectorAll('.animation-child');
+    for (let i = 0; i < children.length; i++) {
+        children[i].dataset.position = `${i}`;
     }
 }
 
