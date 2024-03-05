@@ -1,6 +1,6 @@
-:root{
+/* :root{
     --variable:1;
-}
+} */
 
 
 .navbar {
@@ -155,7 +155,7 @@
     height: 100vh;
 }
 
-.projects-wrap{
+.projects-block{
     position: relative;
     width: 100%;
     height: 100%;
@@ -164,6 +164,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.projects-wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
     transform-style: preserve-3d;
 }
 
@@ -176,9 +183,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    transition: transform 300ms;
     pointer-events: none;
-    transform: perspective(600px);
     transition: transform 500ms;
     transform: perspective(600px) translateX(-100vw) translateY(0%) translateZ(0px);
 }
@@ -187,24 +192,24 @@
     pointer-events: all;
 }
 
-.show-card:nth-child(1){
+.show-card[data-position="0"]{
     transform: perspective(600px) translateX(0%) translateY(0%) translateZ(0px);
     opacity: 1;
 }
 
-.show-card:nth-child(2){
+.show-card[data-position="1"]{
     transform: perspective(600px) translateX(-10%) translateY(-10%) translateZ(-10px);
     opacity: 0.8;
     transition-delay: 100ms;
 }
 
-.show-card:nth-child(3){
+.show-card[data-position="2"]{
     transform: perspective(600px) translateX(-20%) translateY(-20%) translateZ(-20px);
     opacity: 0.6;
     transition-delay: 200ms;
 }
 
-.show-card:nth-child(4){
+.show-card[data-position="3"]{
     transform: perspective(600px) translateX(-30%) translateY(-30%) translateZ(-30px);
     opacity: 0.4;
     transition-delay: 300ms;

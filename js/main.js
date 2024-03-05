@@ -60,11 +60,29 @@ function Scrolling() {
         var trigger2 = properties.top + properties.height/2;
 
         if (trigger2 < trigger) {
-            item.querySelectorAll('.animation-child').forEach(child => {
-                child.classList.add(`${child.dataset.animation}`);
-            });
+            if(item.dataset.animation == "card"){
+                CardAnimation(item);
+            }
+            else{
+                item.querySelectorAll('.animation-child').forEach(child => {
+                    if(child.dataset.animation == "show"){
+                        TextAnimation(child);
+                    }
+                });
+            }
         }
     });
+}
+
+
+function TextAnimation(object) {  
+    object.classList.add(`${object.dataset.animation}`);
+}
+
+function CardAnimation(object) {  
+    for (let i = 0; i < object.length; i++) {
+        object[i].dataset.position = `${i}`;
+    }
 }
 
 
@@ -74,17 +92,21 @@ var projectsCard = document.querySelectorAll('.projects-card');
 projectsCard.forEach(card => {
     var button = card.querySelector('.projects-card-right');
     button.addEventListener('mouseover', () => {
-        card.classList.add('projects-card-hovered');
+        card.style.transform = "perspective(600px) rotateZ(10deg) translateY(-10%) translateX(0%) translateZ(0px)";
     }); 
     button.addEventListener('mouseout', () => {
-        card.classList.remove('projects-card-hovered');
+        card.style.transform = "perspective(600px) rotateZ(0deg) translateY(0%) translateX(0%) translateZ(0px)";
     }); 
     button.addEventListener('click', () => {
-        // card.classList.add('projects-card-clicked');
         projectsCard.forEach(card2 => {
             card2.dataset.position = `${parseInt(card2.dataset.position) - 1}`;
+            card2.classList.remove('projects-card-clicked');
             card.dataset.position = "3";
-            card2.style.transform = `perspective(600px) translateX(-${parseInt(card2.dataset.position)*10}%) translateY(-${parseInt(card2.dataset.position)*10}%) translateZ(-${parseInt(card2.dataset.position)*10}px)`;
+            if(card2.dataset.position != "0"){
+                setTimeout(() => {
+                    card2.style.transform = `perspective(600px) translateX(-${parseInt(card2.dataset.position)*10}%) translateY(-${parseInt(card2.dataset.position)*10}%) translateZ(-${parseInt(card2.dataset.position)*10}px)`;
+                }, 800);
+            }
             card2.style.opacity = `${1/(parseInt(card2.dataset.position) + 1)}`;
             card2.style.transitionDelay = `${parseInt(card2.dataset.position)*100}ms`;
             // card2.style.pointerEvents = "none";
@@ -94,8 +116,12 @@ projectsCard.forEach(card => {
             //     }, 800);
             // }
         });
-
+        card.classList.add('projects-card-clicked');
     }); 
 });
 
-document.documentElement.style.setProperty(`--variable`, `${10}`);
+function name(params) {
+    
+}
+
+// document.documentElement.style.setProperty(`--variable`, `${10}`);
