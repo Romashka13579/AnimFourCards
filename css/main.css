@@ -297,7 +297,7 @@
     0px 0px 0px 20px #0c0b0e2b;
 }
 
-.projects-card-hovered:nth-child(1){
+.projects-card-hovered[data-position="0"]{
     transform: perspective(600px) rotateZ(10deg) translateY(-10%) translateX(0%) translateZ(0px);
 }
 
