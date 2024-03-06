@@ -62,7 +62,6 @@ function Scrolling() {
         if (trigger2 < trigger) {
             if(item.dataset.animation == "card"){
                 CardAnimation(item);
-                console.log("good");
             }
             else{
                 item.querySelectorAll('.animation-child').forEach(child => {
@@ -101,29 +100,25 @@ projectsCard.forEach(card => {
     }); 
     button.addEventListener('click', () => {
         projectsCard.forEach(card2 => {
-            card2.dataset.position = `${parseInt(card2.dataset.position) - 1}`;
             card2.classList.remove('projects-card-clicked');
-            card.dataset.position = "3";
-            // if(card2.dataset.position != "0"){
-            //     setTimeout(() => {
-            //         card2.style.transform = `perspective(600px) translateX(-${parseInt(card2.dataset.position)*10}%) translateY(-${parseInt(card2.dataset.position)*10}%) translateZ(-${parseInt(card2.dataset.position)*10}px)`;
-            //     }, 800);
-            // }
-            // card2.style.opacity = `${1/(parseInt(card2.dataset.position) + 1)}`;
-            // card2.style.transitionDelay = `${parseInt(card2.dataset.position)*100}ms`;
-            // card2.style.pointerEvents = "none";
-            // if(card2.dataset.position == "0"){
-            //     setTimeout(() => {
-            //         card2.style.pointerEvents = "all";
-            //     }, 800);
-            // }
+            card2.classList.remove('projects-card-hovered');
+            card2.style.pointerEvents = "none";
+            setTimeout(() => {
+                card2.dataset.position = `${parseInt(card2.dataset.position) - 1}`;
+                if(card2.dataset.position == "0"){
+                    setTimeout(() => {PoitnerEvents(card2)}, 800);
+                }
+                card.dataset.position = "3";
+                card.classList.add('projects-card-clicked'); 
+            }, 30);
         });
-        card.classList.add('projects-card-clicked');
     }); 
 });
 
-function name(params) {
-    
+PoitnerEvents(projectsCard[0]);
+
+function PoitnerEvents(object) {
+    object.style.pointerEvents = "all";
 }
 
 // document.documentElement.style.setProperty(`--variable`, `${10}`);

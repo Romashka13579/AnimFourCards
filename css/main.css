@@ -184,12 +184,11 @@
     display: flex;
     flex-direction: row;
     pointer-events: none;
-    transition: transform 500ms;
+    transition: transform 400ms, opacity 500ms;
     transform: perspective(600px) translateX(-100vw) translateY(0%) translateZ(0px);
 }
 
 .projects-card[data-position="0"]{
-    pointer-events: all;
     transform: perspective(600px) translateX(0%) translateY(0%) translateZ(0px);
     opacity: 1;
 }
@@ -301,8 +300,8 @@
     transform: perspective(600px) rotateZ(10deg) translateY(-10%) translateX(0%) translateZ(0px);
 }
 
-.projects-card-clicked{
-    animation: goingback forwards 800ms ease;
+.projects-card-clicked[data-position="3"]{
+    animation: goingback forwards 900ms ease;
 }
 
 @keyframes goingback {
@@ -313,7 +312,7 @@
         transform: perspective(600px) rotateZ(40deg) translateY(-120%) translateZ(-10px) translateX(30%);
     }
     100%{
-        transform: perspective(600px) rotateZ(0deg) translateY(-30%) translateZ(-100px) translateX(-30%);
+        transform: perspective(600px) rotateZ(0deg) translateY(-30%) translateZ(-30px) translateX(-30%);
     }
 }
 
