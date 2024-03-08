@@ -41,19 +41,29 @@ function Moving(object){
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         object.style.marginTop = `-20vh`;
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
+
     });
 }
 
+var afterParallax = document.querySelector('.after-parallax');
+
+// window.addEventListener('scroll', () => {
+//     paralaxMain = document.querySelector('.main-parallax');
+//     paralaxMainClient = paralaxMain.getBoundingClientRect();
+//     var y = (0 - (window.scrollY*2.5)/paralaxMainClient.height * 20);
+//     afterParallax.style.marginTop = `${y}vh`;
+// });
 
 
-var animationTexts = document.querySelectorAll('.animated');
+var animations = document.querySelectorAll('.animated');
 
 window.addEventListener('scroll', Scrolling);
+var cardsPoint = false;
 
 Scrolling();
 
 function Scrolling() {
-    animationTexts.forEach(item => {
+    animations.forEach(item => {
 
         var trigger = window.innerHeight;
         var properties = item.getBoundingClientRect();
@@ -61,7 +71,9 @@ function Scrolling() {
 
         if (trigger2 < trigger) {
             if(item.dataset.animation == "card"){
+                if(cardsPoint) return;
                 CardAnimation(item);
+                cardsPoint = true;
             }
             else{
                 item.querySelectorAll('.animation-child').forEach(child => {

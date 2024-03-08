@@ -72,13 +72,20 @@
 
 .main-parallax-gradient {
     position: absolute;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 101%);
     width: 100%;
     height: 100%;
 }
 
 
 
+
+
+.after-parallax{
+    position: relative;
+    width: 100%;
+    background: var(--background);
+}
 
 .about-me {
     position: relative;
@@ -178,37 +185,42 @@
     position: absolute;
     width: 40vw;
     aspect-ratio: 1/0.6;
-    background: #0c0b0e;
+    background: #131117;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: row;
     pointer-events: none;
-    transition: transform 400ms, opacity 500ms;
+    transition: transform 400ms, opacity 200ms, filter 500ms;
     transform: perspective(600px) translateX(-100vw) translateY(0%) translateZ(0px);
+    box-shadow: 6px 6px 14px 2px rgba(24, 17, 34, 0.628);
 }
 
 .projects-card[data-position="0"]{
     transform: perspective(600px) translateX(0%) translateY(0%) translateZ(0px);
     opacity: 1;
+    filter: grayscale(0);
 }
 
 .projects-card[data-position="1"]{
     transform: perspective(600px) translateX(-10%) translateY(-10%) translateZ(-10px);
     opacity: 0.8;
-    transition-delay: 100ms;
+    transition-delay: 120ms;
+    filter: grayscale(0.8) blur(0.6px);
 }
 
 .projects-card[data-position="2"]{
     transform: perspective(600px) translateX(-20%) translateY(-20%) translateZ(-20px);
     opacity: 0.6;
-    transition-delay: 200ms;
+    filter: grayscale(0.9) blur(0.8px);
+    transition-delay: 240ms;
 }
 
 .projects-card[data-position="3"]{
     transform: perspective(600px) translateX(-30%) translateY(-30%) translateZ(-30px);
     opacity: 0.4;
-    transition-delay: 300ms;
+    transition-delay: 360ms;
+    filter: grayscale(1) blur(1px);
 }
 
 .projects-card-image{
@@ -309,7 +321,7 @@
         transform: perspective(600px) rotateZ(10deg) translateY(-10%);
     }
     50%{
-        transform: perspective(600px) rotateZ(40deg) translateY(-120%) translateZ(-10px) translateX(30%);
+        transform: perspective(600px) rotateZ(50deg) translateY(-150%) translateZ(-10px) translateX(30%);
     }
     100%{
         transform: perspective(600px) rotateZ(0deg) translateY(-30%) translateZ(-30px) translateX(-30%);
