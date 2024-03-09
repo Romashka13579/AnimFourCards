@@ -16,7 +16,9 @@ Start();
 function Start() {
     for (let i = 0; i < mainParallaxLayers.length; i++) {
         setTimeout(() => {
-            mainParallaxLayers[i].style.marginTop = `-20vh`;
+            if (i != mainParallaxLayers.length-1) {
+                mainParallaxLayers[i].style.marginTop = `-20vh`;
+            }
             Moving(mainParallaxLayers[i]);
         }, 200*i/Math.pow(1.2,i));
     }
@@ -31,7 +33,9 @@ function Moving(object){
         y1 = e.clientY;
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         y = (0 - (y1 + y2)/paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
-        object.style.marginTop = `-20vh`;
+        if(object.dataset.speedx != "0"){
+            object.style.marginTop = `-20vh`;
+        }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
     });
 
@@ -39,20 +43,21 @@ function Moving(object){
         y2 = window.scrollY*2.5;
         y = (0 - (y1 + y2)/paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
-        object.style.marginTop = `-20vh`;
+        if(object.dataset.speedx != "0"){
+            object.style.marginTop = `-20vh`;
+        }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
-
     });
 }
 
 var afterParallax = document.querySelector('.after-parallax');
 
-// window.addEventListener('scroll', () => {
-//     paralaxMain = document.querySelector('.main-parallax');
-//     paralaxMainClient = paralaxMain.getBoundingClientRect();
-//     var y = (0 - (window.scrollY*2.5)/paralaxMainClient.height * 20);
-//     afterParallax.style.marginTop = `${y}vh`;
-// });
+window.addEventListener('scroll', () => {
+    paralaxMain = document.querySelector('.main-parallax');
+    paralaxMainClient = paralaxMain.getBoundingClientRect();
+    var y = (100 - (window.scrollY*10)/paralaxMainClient.height * 20);
+    afterParallax.style.transform = `translateY${y}vh`;
+});
 
 
 var animations = document.querySelectorAll('.animated');

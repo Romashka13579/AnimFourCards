@@ -70,11 +70,29 @@
     margin-top: 10vh;
 }
 
-.main-parallax-gradient {
+.main-parallax-ground{
+    height: 20vw;
+    top: 100%;
+    background: #131117;
+}
+
+.main-parallax-gradient-2{
     position: absolute;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 101%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 100%);
+    width: 140vw;
+    aspect-ratio: 16/9;
+}
+
+.main-parallax-gradient{
+    position: absolute;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 100%);
     width: 100%;
     height: 100%;
+}
+
+.last-layer{
+    border-top: 1000px solid transparent;
+    border-bottom: 1000px solid #131117;
 }
 
 
@@ -89,12 +107,13 @@
 
 .about-me {
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    aspect-ratio: 16/6;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 200px;
+    padding: 0px 200px 100px 200px;
     box-sizing: border-box;
 }
 
@@ -159,7 +178,8 @@
 .projects{
     position: relative;
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
+    aspect-ratio: 16/9;
 }
 
 .projects-block{
