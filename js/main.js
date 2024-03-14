@@ -17,7 +17,7 @@ function Start() {
     for (let i = 0; i < mainParallaxLayers.length; i++) {
         setTimeout(() => {
             if (i != mainParallaxLayers.length-1) {
-                mainParallaxLayers[i].style.marginTop = `-20vh`;
+                mainParallaxLayers[i].style.marginTop = `-11vw`;
             }
             Moving(mainParallaxLayers[i]);
         }, 200*i/Math.pow(1.2,i));
@@ -34,7 +34,7 @@ function Moving(object){
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         y = (0 - (y1 + y2)/paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
         if(object.dataset.speedx != "0"){
-            object.style.marginTop = `-20vh`;
+            object.style.marginTop = `-11vw`;
         }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
     });
@@ -44,11 +44,13 @@ function Moving(object){
         y = (0 - (y1 + y2)/paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
         x = (20 - x1/paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         if(object.dataset.speedx != "0"){
-            object.style.marginTop = `-20vh`;
+            object.style.marginTop = `-11vw`;
         }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
     });
 }
+
+
 
 var afterParallax = document.querySelector('.after-parallax');
 
@@ -63,7 +65,6 @@ window.addEventListener('scroll', () => {
 var animations = document.querySelectorAll('.animated');
 
 window.addEventListener('scroll', Scrolling);
-var cardsPoint = false;
 
 Scrolling();
 
@@ -75,25 +76,79 @@ function Scrolling() {
         var trigger2 = properties.top + properties.height/2;
 
         if (trigger2 < trigger) {
-            if(item.dataset.animation == "card"){
-                if(cardsPoint) return;
+            if(item.dataset.animated == "true") return;
+            else if(item.dataset.animation == "card"){
+                item.dataset.animated = "true";
                 CardAnimation(item);
-                cardsPoint = true;
             }
             else{
                 item.querySelectorAll('.animation-child').forEach(child => {
-                    if(child.dataset.animation == "show"){
-                        TextAnimation(child);
-                    }
+                    TextSplitting(child);
                 });
             }
+            item.dataset.animated = "true";
         }
     });
 }
 
 
-function TextAnimation(object) {  
-    object.classList.add(`${object.dataset.animation}`);
+function TextSplitting(object) {  
+    object.style.opacity = "1";
+    var string = object.innerHTML.split("");
+    object.innerHTML = "";
+    for (let i = 0; i < string.length; i++) {
+        var span = document.createElement('span');
+        span.classList.add("text-span");
+        span.innerHTML = string[string.length-i-1];
+        object.prepend(span);
+    }
+
+
+    TextAppearing(object);
+}
+
+function TextAppearing(object) {
+    var array = object.querySelectorAll('.text-span');
+    var jump = 0;
+    var previous = 10000;
+    let j = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i].offsetTop > previous){
+            j++;
+            jump = i- 5*j;
+            console.log(jump);
+        }
+        setTimeout(() => {
+            array[i].style.opacity = "1";
+            if (object.dataset.animation == "switch" && i == array.length-1) {
+                setTimeout(() => {
+                    TextDisAppearing(object);
+                }, 4000);
+            }
+        }, 45*(i-jump));
+        previous = array[i].offsetTop;
+    }
+}
+
+function TextDisAppearing(object) { 
+    var array = object.querySelectorAll('.text-span');
+    var jump = 0;
+    var previous = 10000;
+    let j = 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i].offsetTop > previous){
+            j++;
+            jump = i- 5*j;
+            console.log(jump);
+        }
+        setTimeout(() => {
+            array[i].style.opacity = "0";
+            if (object.dataset.animation == "switch" && i == array.length-1) {
+                TextAppearing(object);
+            }
+        }, 45*(i-jump));
+        previous = array[i].offsetTop;
+    }
 }
 
 function CardAnimation(object) { 
@@ -102,6 +157,7 @@ function CardAnimation(object) {
         children[i].dataset.position = `${i}`;
     }
 }
+
 
 
 

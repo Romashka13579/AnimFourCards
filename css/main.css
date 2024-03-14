@@ -14,7 +14,7 @@
     width: 100%;
     z-index: 10;
     background-color: rgb(255 255 255 / 0%);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
 }
 
 .navbar-logo {
@@ -126,23 +126,31 @@
 
 .about-me-text {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     font-family: "Poppins", sans-serif;
     color: aliceblue;
     flex-direction: column;
 }
 
 .about-me-header {font-size: 56px;font-weight: 600;transition: all 400ms;}
+.about-me-types {font-size: 19px;transition: all 700ms;padding: 16px 0px; display: flex; gap: 10px; align-items: center;}
 .about-me-description {font-size: 23px;transition: all 700ms;}
 
-.about-me-header, .about-me-description{
-    opacity: 0;
-    transform: translateY(50%);
+.about-me-point{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: aliceblue;
 }
 
-.show {
-    opacity: 1;     
-    transform: translateY(0%);
+.about-me-header, .about-me-description, .about-me-part, .about-me-point{
+    opacity: 0;
+}
+
+.text-span{
+    position: relative;
+    opacity: 0;
+    transition: opacity 500ms;
 }
 
 .about-me-image-box {
