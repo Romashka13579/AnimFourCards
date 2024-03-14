@@ -131,16 +131,20 @@ function TextAppearing(object) {
     }
 }
 
-var TypesArray = ["Buble", "Buble", "Buble2"];
+var TypesArray = ["Buble1", "Buble2", "Buble3"];
 
 function TextSwitch(object) { 
     var array = object.querySelectorAll('.text-span');
-    console.log(TypesArray[parseInt(object.dataset.animation)]);
-    for (let i = 0; i < TypesArray[parseInt(object.dataset.animation)].length; i++) {
-        array[i].innerHTML = '';
-        array[i].innerHTML = TypesArray[parseInt(object.dataset.animation)][i];
+    for (let i = 0; i < array.length; i++) {
+        if(!TypesArray[parseInt(object.dataset.animation)][i]){
+            array[i].innerHTML = '';
+        }
+        else{
+            array[i].innerHTML = TypesArray[parseInt(object.dataset.animation)][i];
+        }
     }
-    object.dataset.animation = `${parseInt(object.dataset.animation) + 1}`;
+    object.dataset.animation = (parseInt(object.dataset.animation)) == (TypesArray.length - 1)? "0" : `${parseInt(object.dataset.animation) + 1}`;
+    console.log(object.dataset.animation);
     var jump = 0;
     var previous = 10000;
     let j = 0;
