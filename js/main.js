@@ -122,7 +122,8 @@ function TextAppearing(object) {
             array[i].style.opacity = "1";
             if (object.dataset.animation == "switch" && i == array.length-1) {
                 setTimeout(() => {
-                    TextDisAppearing(object);
+                    object.dataset.animation = "0";
+                    TextSwitch(object);
                 }, 4000);
             }
         }, 45*(i-jump));
@@ -130,8 +131,16 @@ function TextAppearing(object) {
     }
 }
 
-function TextDisAppearing(object) { 
+var TypesArray = ["Buble", "Buble", "Buble2"];
+
+function TextSwitch(object) { 
     var array = object.querySelectorAll('.text-span');
+    console.log(TypesArray[parseInt(object.dataset.animation)]);
+    for (let i = 0; i < TypesArray[parseInt(object.dataset.animation)].length; i++) {
+        array[i].innerHTML = '';
+        array[i].innerHTML = TypesArray[parseInt(object.dataset.animation)][i];
+    }
+    object.dataset.animation = `${parseInt(object.dataset.animation) + 1}`;
     var jump = 0;
     var previous = 10000;
     let j = 0;
@@ -142,9 +151,11 @@ function TextDisAppearing(object) {
             console.log(jump);
         }
         setTimeout(() => {
-            array[i].style.opacity = "0";
-            if (object.dataset.animation == "switch" && i == array.length-1) {
-                TextAppearing(object);
+            array[i].style.opacity = "1";
+            if (object.dataset.animation && i == array.length-1) {
+                setTimeout(() => {
+                    TextSwitch(object);
+                }, 4000);
             }
         }, 45*(i-jump));
         previous = array[i].offsetTop;
