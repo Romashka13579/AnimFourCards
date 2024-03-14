@@ -131,39 +131,54 @@ function TextAppearing(object) {
     }
 }
 
-var TypesArray = ["Buble1", "Buble2", "Buble3"];
+var TypesArray = ["Designer", "Game Developer", "Web/Frontend developer"];
 
 function TextSwitch(object) { 
     var array = object.querySelectorAll('.text-span');
     for (let i = 0; i < array.length; i++) {
-        if(!TypesArray[parseInt(object.dataset.animation)][i]){
-            array[i].innerHTML = '';
-        }
-        else{
-            array[i].innerHTML = TypesArray[parseInt(object.dataset.animation)][i];
-        }
-    }
-    object.dataset.animation = (parseInt(object.dataset.animation)) == (TypesArray.length - 1)? "0" : `${parseInt(object.dataset.animation) + 1}`;
-    console.log(object.dataset.animation);
-    var jump = 0;
-    var previous = 10000;
-    let j = 0;
-    for (let i = 0; i < array.length; i++) {
-        if(array[i].offsetTop > previous){
-            j++;
-            jump = i- 5*j;
-            console.log(jump);
-        }
         setTimeout(() => {
+            array[i].style.opacity = "0";
+            console.log(1);
+        }, i * 100);
+    }
+    for (let i = 0; i < array.length; i++) {
+        setTimeout(() => {
+            if(!TypesArray[parseInt(object.dataset.animation)][i]){
+                array[i].innerHTML = '';
+            }
+            else{
+                array[i].innerHTML = TypesArray[parseInt(object.dataset.animation)][i];
+            }
             array[i].style.opacity = "1";
             if (object.dataset.animation && i == array.length-1) {
                 setTimeout(() => {
                     TextSwitch(object);
                 }, 4000);
             }
-        }, 45*(i-jump));
-        previous = array[i].offsetTop;
+            console.log(2);
+        }, (100*i + 100));
     }
+    object.dataset.animation = (parseInt(object.dataset.animation)) == (TypesArray.length - 1)? "0" : `${parseInt(object.dataset.animation) + 1}`;
+    console.log(object.dataset.animation);
+    // var jump = 0;
+    // var previous = 10000;
+    // let j = 0;
+    // for (let i = 0; i < array.length; i++) {
+    //     if(array[i].offsetTop > previous){
+    //         j++;
+    //         jump = i- 5*j;
+    //         console.log(jump);
+    //     }
+    //     setTimeout(() => {
+    //         array[i].style.opacity = "1";
+    //         if (object.dataset.animation && i == array.length-1) {
+    //             setTimeout(() => {
+    //                 TextSwitch(object);
+    //             }, 4000);
+    //         }
+    //     }, 45*(i-jump));
+    //     previous = array[i].offsetTop;
+    // }
 }
 
 function CardAnimation(object) { 

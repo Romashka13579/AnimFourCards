@@ -121,6 +121,8 @@
     position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
     gap: 50px;
 }
 
@@ -141,6 +143,7 @@
     height: 10px;
     border-radius: 50%;
     background: aliceblue;
+    transform: all 500ms;
 }
 
 .about-me-header, .about-me-description, .about-me-part, .about-me-point{
@@ -153,24 +156,16 @@
     transition: opacity 500ms;
 }
 
-.about-me-image-box {
-    position: relative;
-    display: flex;
-    width: 22vw;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 50%;
-    aspect-ratio: 1/1.05;
-    transition: 0.8s;
-    box-shadow: 0px 0px 200px 3px #ed5b5b3d;
+.about-me-part .text-span{
+    transition: opacity 200ms;
 }
 
 .about-me-image {
+    position: relative;
     width: 22vw;
     border-radius: 50%;
     aspect-ratio: 1/1.05;
-    z-index: 2;
+    box-shadow: 0px 0px 200px 3px #ed5b5b3d;
 }
 
 @keyframes spinning {
