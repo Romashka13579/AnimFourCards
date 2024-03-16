@@ -92,10 +92,16 @@ function Scrolling() {
 }
 
 var line;
+var hovered = true;
+var repetitions = 0;
 
 function TextSplitting(object) {  
-    if(object.dataset.animation == "line"){
-        line = object;
+    if(object.dataset.animation == "line-box"){
+        line = object.querySelector('.about-me-line');
+        object.addEventListener('mouseenter', () =>  {
+            hovered = true;
+            repetitions = 0;
+        });
         LineAppearing();
     }
     else{
@@ -115,28 +121,30 @@ function TextSplitting(object) {
 }
 var translation = -105;
 var increase = 0;
-var repetitions = 0;
 
 function LineAppearing(){
     line.style.transform = `translateX(${translation}%)`;
-    if(repetitions == 5){
-        if(translation + 1 * increase >= 0){
+    if(repetitions == 3 && hovered == false){
+        if(translation + 2 * increase >= 0){
             translation = 0;
-            return;
+            line.style.transform = `translateX(${translation}%)`;
         }
         else{
             translation += 1 * increase;
-            increase += 0.1;
+            increase += 0.2;
         }
     }
     else if(translation + 1 * increase <= 105){
         translation += 1 * increase;
-        increase += 0.1;
+        increase += 0.2;
     }
     else{
         translation = -105;
         increase = 0;
         repetitions += 1;
+        if(repetitions == 3){
+            hovered = false;
+        }
     }
     
     requestAnimationFrame(LineAppearing);
