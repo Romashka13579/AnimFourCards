@@ -134,9 +134,78 @@
     flex-direction: column;
 }
 
+.about-me-header-box{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .about-me-header {font-size: 56px;font-weight: 600;transition: all 400ms;}
 .about-me-types {font-size: 19px;transition: all 700ms;padding: 16px 0px; display: flex; gap: 10px; align-items: center;}
 .about-me-description {font-size: 23px;transition: all 700ms;}
+
+.about-me-line{
+    width: 100%;
+    height: 5px;
+    transform: translateX(-31vw);
+    display: flex;
+    justify-content: center;
+}
+
+.about-me-line-in{
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: lineinanim 5s cubic-bezier(.45,.2,.8,.55);
+}
+
+.line-animation{
+    animation: lineanim 1s cubic-bezier(.45,.2,.8,.55);
+    transform: translateX(0%);
+}
+
+@keyframes lineinanim {
+    50%{
+        width: 10%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes lineanim {
+    0%{
+        transform: translateX(-110%);
+    }
+    20%{
+        transform: translateX(110%);
+    }
+    20.1%{
+        transform: translateX(-110%);
+    }
+    40%{
+        transform: translateX(110%);
+    }
+    40.1%{
+        transform: translateX(-110%);
+    }
+    60%{
+        transform: translateX(110%);
+    }
+    60.1%{
+        transform: translateX(-110%);
+    }
+    80%{
+        transform: translateX(110%);
+    }
+    80.1%{
+        transform: translateX(-110%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
 
 .about-me-point{
     width: 10px;
@@ -351,3 +420,24 @@
     }
 }
 
+
+
+
+
+.footer{
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-top{
+    width: 100%;
+    height: 20vh;
+    background: var(--footer);
+    border-top-left-radius: 200%;
+    border-top-right-radius: 200%;
+}

@@ -91,21 +91,60 @@ function Scrolling() {
     });
 }
 
+var line;
 
 function TextSplitting(object) {  
-    object.style.opacity = "1";
-    var string = object.innerHTML.split("");
-    object.innerHTML = "";
-    for (let i = 0; i < string.length; i++) {
-        var span = document.createElement('span');
-        span.classList.add("text-span");
-        span.innerHTML = string[string.length-i-1];
-        object.prepend(span);
+    if(object.dataset.animation == "line"){
+        line = object;
+        LineAppearing();
     }
-
-
-    TextAppearing(object);
+    else{
+        object.style.opacity = "1";
+        var string = object.innerHTML.split("");
+        object.innerHTML = "";
+        for (let i = 0; i < string.length; i++) {
+            var span = document.createElement('span');
+            span.classList.add("text-span");
+            span.innerHTML = string[string.length-i-1];
+            object.prepend(span);
+        }
+    
+    
+        TextAppearing(object);
+    }
 }
+var translation = -105;
+var increase = 0;
+var repetitions = 0;
+
+function LineAppearing(){
+    line.style.transform = `translateX(${translation}%)`;
+    if(repetitions == 5){
+        if(translation + 1 * increase >= 0){
+            translation = 0;
+            return;
+        }
+        else{
+            translation += 1 * increase;
+            increase += 0.1;
+        }
+    }
+    else if(translation + 1 * increase <= 105){
+        translation += 1 * increase;
+        increase += 0.1;
+    }
+    else{
+        translation = -105;
+        increase = 0;
+        repetitions += 1;
+    }
+    
+    requestAnimationFrame(LineAppearing);
+}
+
+// function LineAppearing(line) {
+//     line.classList.add("line-animation");
+// }
 
 function TextAppearing(object) {
     var array = object.querySelectorAll('.text-span');
@@ -116,7 +155,6 @@ function TextAppearing(object) {
         if(array[i].offsetTop > previous){
             j++;
             jump = i- 5*j;
-            console.log(jump);
         }
         setTimeout(() => {
             array[i].style.opacity = "1";
@@ -138,7 +176,6 @@ function TextSwitch(object) {
     for (let i = 0; i < array.length; i++) {
         setTimeout(() => {
             array[i].style.opacity = "0";
-            console.log(1);
         }, i * 100);
     }
     for (let i = 0; i < array.length; i++) {
@@ -155,11 +192,9 @@ function TextSwitch(object) {
                     TextSwitch(object);
                 }, 4000);
             }
-            console.log(2);
         }, (100*i + 100));
     }
     object.dataset.animation = (parseInt(object.dataset.animation)) == (TypesArray.length - 1)? "0" : `${parseInt(object.dataset.animation) + 1}`;
-    console.log(object.dataset.animation);
     // var jump = 0;
     // var previous = 10000;
     // let j = 0;
