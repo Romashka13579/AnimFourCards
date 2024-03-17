@@ -14,6 +14,8 @@ window.onbeforeunload = function () {
 Start();
 
 function Start() {
+    var navbar = document.querySelector('.navbar');
+    navbar.style.transform = "translateY(0px)";
     for (let i = 0; i < mainParallaxLayers.length; i++) {
         setTimeout(() => {
             if (i != mainParallaxLayers.length-1) {
