@@ -91,18 +91,13 @@ function Scrolling() {
     });
 }
 
-var line;
-var hovered = true;
-var repetitions = 0;
-
 function TextSplitting(object) {  
     if(object.dataset.animation == "line-box"){
-        line = object.querySelector('.about-me-line');
+        var line = object.querySelector('.about-me-line');
         object.addEventListener('mouseenter', () =>  {
-            hovered = true;
-            repetitions = 0;
+            line.dataset.repetitions = "0";
         });
-        LineAppearing();
+        LineAppearing(line);
     }
     else{
         object.style.opacity = "1";
@@ -119,40 +114,49 @@ function TextSplitting(object) {
         TextAppearing(object);
     }
 }
-var translation = -105;
-var increase = 0;
 
-function LineAppearing(){
-    line.style.transform = `translateX(${translation}%)`;
-    if(repetitions == 3 && hovered == false){
-        if(translation + 2 * increase >= 0){
-            translation = 0;
-            line.style.transform = `translateX(${translation}%)`;
+var navbarBoxes = document.querySelectorAll('.navbar-link-box');
+navbarBoxes.forEach(navbarBox => {
+    var navbarLine = navbarBox.querySelector('.navbar-link-line');
+    LineAppearing(navbarLine);
+    navbarBox.addEventListener('mouseenter', () =>  {
+        navbarLine.dataset.repetitions = "0";
+    });
+});
+
+function LineAppearing(line){
+    let id = null;
+    var increase = 0;
+    var translation = -105;
+    id = setInterval(frame, 12);
+    function frame() {
+        line.style.transform = `translateX(${translation}%)`;
+        if(parseInt(line.dataset.repetitions) == 3){
+            if(translation + 2 * increase >= 0){
+                translation = 0;
+                increase = 0;
+                line.style.transform = `translateX(${translation}%)`;
+            }
+            else{
+                translation += 1 * increase;
+                increase += 0.2;
+            }
         }
-        else{
+        else if(translation + 1 * increase <= 105){
             translation += 1 * increase;
             increase += 0.2;
         }
-    }
-    else if(translation + 1 * increase <= 105){
-        translation += 1 * increase;
-        increase += 0.2;
-    }
-    else{
-        translation = -105;
-        increase = 0;
-        repetitions += 1;
-        if(repetitions == 3){
-            hovered = false;
+        else{
+            translation = -105;
+            increase = 0;
+            line.dataset.repetitions = `${parseInt(line.dataset.repetitions) + 1}`;
+            if(parseInt(line.dataset.repetitions) == 3){
+                console.log(parseInt(line.dataset.repetitions));
+            }
         }
     }
-    
-    requestAnimationFrame(LineAppearing);
 }
 
-// function LineAppearing(line) {
-//     line.classList.add("line-animation");
-// }
 
 function TextAppearing(object) {
     var array = object.querySelectorAll('.text-span');
