@@ -56,7 +56,7 @@
 }
 
 .navbar-link {
-    font-family: "Varela Round", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: aliceblue;
     font-size: 19px;
     transition: 200ms;
@@ -79,14 +79,13 @@
 .main-parallax-layer {
     position: absolute;
     width: 140vw;
-    /* min-height: 140vh; */
     margin-top: 100vh;
     transition: margin-top 1000ms, transform 3000ms cubic-bezier(0, 0.8, 0.2, 1);
 }
 
 .main-parallax-text {
     width: auto;
-    top: 64%;
+    top: 74%;
     font-family: "Anton", sans-serif;
     color: white;
     font-size: 12vw;
@@ -114,7 +113,7 @@
     position: absolute;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 90%, var(--background) 100%);
     width: 100%;
-    height: 100%;
+    height: 101%;
 }
 
 .last-layer{
@@ -152,6 +151,7 @@
     align-items: center;
     justify-content: center;
     gap: 180px;
+    z-index: 2;
 }
 
 .about-me-text {
@@ -278,7 +278,7 @@
     border-radius: 50%;
     aspect-ratio: 1/1.05;
     box-shadow: 0px 0px 200px 3px #ed5b5b3d;
-    z-index: 15;
+    z-index: 8;
 }
 
 @keyframes spinning {
@@ -307,6 +307,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .projects-wrap{
@@ -481,6 +482,7 @@
     padding: 50px 150px;
     box-sizing: border-box;
     gap: 30px;
+    z-index: 2;
 }
 
 .footer-top{
@@ -565,4 +567,54 @@
 .footer-bottom-link:nth-child(1):hover{color:#3390EC;}
 .footer-bottom-link:nth-child(2):hover{color:#F62B5F;}
 .footer-bottom-link:nth-child(3):hover{color:#40C451;}
-.footer-bottom-link:nth-child(4):hover{color:#3a3838;}
+.footer-bottom-link:nth-child(4):hover{color:#4a4848;}
+
+.mouse-following-bulb{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    aspect-ratio: 1/1;
+    transition: left 400ms cubic-bezier(0, 0.8, 0.2, 1), top 400ms cubic-bezier(0, 0.8, 0.2, 1);
+}
+
+.mouse-following-bulb-blur{
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 50%;
+    animation: rotation linear infinite;
+    backdrop-filter: blur(120px);
+}
+
+.mouse-following-bulb-part{
+    position: absolute;
+    background: linear-gradient(90deg, #f99a96 0%,#ef6366 100%);
+    border-radius: 50%;
+    animation: rotation linear infinite;
+}
+
+.mouse-following-bulb-part:nth-child(1){
+    animation-duration: 40s;
+    width: 150%;
+    aspect-ratio: 1/1.5;
+}
+
+.mouse-following-bulb-part:nth-child(2){
+    animation-duration: 31s;
+    height: 150%;
+    aspect-ratio: 1.5/1;
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}

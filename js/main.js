@@ -11,7 +11,7 @@ document.querySelector('.navbar').style.transform = "translateY(0px)";
 for (let i = 0; i < mainParallaxLayers.length; i++) {
     setTimeout(() => {
         if (i != mainParallaxLayers.length - 1) {
-            mainParallaxLayers[i].style.marginTop = `-11vw`;
+            mainParallaxLayers[i].style.marginTop = `-20vw`;
         }
         Moving(mainParallaxLayers[i]);
     }, 200 * i / Math.pow(1.2, i));
@@ -31,19 +31,19 @@ function Moving(object) {
         x1 = e.clientX;
         y1 = e.clientY;
         x = (20 - x1 / paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
-        y = (0 - (y1 + y2) / paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
+        y = (10 - (y1 + y2) / paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
         if (object.dataset.speedx != "0") {
-            object.style.marginTop = `-11vw`;
+            object.style.marginTop = `-20vw`;
         }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
     });
 
     window.addEventListener('scroll', () => {
         y2 = window.scrollY * 2.5;
-        y = (0 - (y1 + y2) / paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
+        y = (10 - (y1 + y2) / paralaxMainClient.height * 20) * parseFloat(object.dataset.speedy);
         x = (20 - x1 / paralaxMainClient.width * 40) * parseFloat(object.dataset.speedx);
         if (object.dataset.speedx != "0") {
-            object.style.marginTop = `-11vw`;
+            object.style.marginTop = `-20vw`;
         }
         object.style.transform = `translateX(${x}vw) translateY(${y}vh)`;
     });
@@ -243,5 +243,16 @@ PoitnerEvents(projectsCard[0]);
 function PoitnerEvents(object) {
     object.style.pointerEvents = "all";
 }
+
+var bulb = document.querySelector('.mouse-following-bulb');
+
+window.addEventListener('mousemove', (e) => {
+    var difference = window.scrollY;
+    var properties = bulb.getBoundingClientRect()
+    let x = e.clientX - properties.width/2;
+    let y = e.clientY + difference - properties.height/2;
+    bulb.style.top = `${y}px`;
+    bulb.style.left = `${x}px`;
+});
 
 // document.documentElement.style.setProperty(`--variable`, `${10}`);
