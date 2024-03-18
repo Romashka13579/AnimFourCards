@@ -244,15 +244,4 @@ function PoitnerEvents(object) {
     object.style.pointerEvents = "all";
 }
 
-var bulb = document.querySelector('.mouse-following-bulb');
-
-window.addEventListener('mousemove', (e) => {
-    var difference = window.scrollY;
-    var properties = bulb.getBoundingClientRect()
-    let x = e.clientX - properties.width/2;
-    let y = e.clientY + difference - properties.height/2;
-    bulb.style.top = `${y}px`;
-    bulb.style.left = `${x}px`;
-});
-
 // document.documentElement.style.setProperty(`--variable`, `${10}`);

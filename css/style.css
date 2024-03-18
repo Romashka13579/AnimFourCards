@@ -2,7 +2,7 @@
 
 :root{
     --background: #131117;
-    --footer: #191222;
+    --footer: #3b2238;
     --big-card-1:white;
     --big-card-2:red;
     --big-card-3:blue;
@@ -28,6 +28,7 @@ body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
+    height: 100%;
 }
 
 .the-animations{
